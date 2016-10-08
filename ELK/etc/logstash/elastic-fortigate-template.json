@@ -1,0 +1,343 @@
+{
+  "order": 0,
+  "template": "fortigate*",
+  "settings": {
+    "index.refresh_interval": "5s"
+  },
+  "mappings": {
+    "fortigate": {
+      "dynamic_templates": [
+        {
+          "notanalyzed": {
+            "match": "*",
+            "match_mapping_type": "string",
+            "mapping": {
+              "type": "string",
+              "index": "not_analyzed",
+              "doc_values": "true"
+            }
+          }
+        }
+      ],
+      "properties": {
+        "@timestamp": {
+          "type": "date",
+          "format": "dateOptionalTime",
+          "index": "not_analyzed"
+        },
+        "@version": {
+          "type": "string"
+        },
+        "action": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "analyticscksum": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "app": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "appact": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "appcat": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "appid": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "applist": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "apprisk": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "bytes_recieved": {
+          "type": "long"
+        },
+        "bytes_sent": {
+          "type": "long"
+        },
+        "cat": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "catdesc": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "countapp": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "countav": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "countweb": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "craction": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "crlevel": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "crscore": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "date": {
+          "type": "date",
+          "format": "dateOptionalTime",
+          "index": "not_analyzed"
+        },
+        "device_id": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "devid": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "devtype": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "direction": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "dst_ip": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "dst_port": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "dstcountry": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "dstintf": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "dtype": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "duration": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "eventtype": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "filename": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "group": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "host": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "hostname": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "lanin": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "lanout": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "level": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "log_type": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "logid": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "mastersrcmac": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "message": {
+          "type": "string"
+        },
+        "method": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "osname": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "osversion": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "policyid": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "policytype": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "poluuid": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "profile": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "profiletype": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "proto": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "rcvdpkt": {
+          "type": "integer"
+        },
+        "referralurl": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "reqtype": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "ruleID": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "sentpkt": {
+          "type": "integer"
+        },
+        "service": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "sessionid": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "src_intf": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "src_ip": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "src_port": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "srccountry": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "srcmac": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "srcname": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "sslexempt": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "subtype": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "time": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "trandisp": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "transip": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "transport": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "type": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "url": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "user": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "utmaction": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "vd": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "virus": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "wanin": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "wanoptapptype": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "wanout": {
+          "type": "string",
+          "index": "not_analyzed"
+        }
+      }
+    }
+  }
+}
+

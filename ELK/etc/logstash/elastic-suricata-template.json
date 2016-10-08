@@ -1,0 +1,160 @@
+{
+  "order": 0,
+  "template": "suricata*",
+  "settings": {
+    "index.refresh_interval": "5s"
+  },
+  "mappings": {
+    "suricata": {
+      "dynamic_templates": [
+        {
+          "notanalyzed": {
+            "match": "*",
+            "match_mapping_type": "string",
+            "mapping": {
+              "type": "string",
+              "index": "not_analyzed",
+              "doc_values": "true"
+            }
+          }
+        }
+      ],
+      "properties": {
+        "dns": {
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "index": "not_analyzed",
+                    "doc_values": "true"
+                },
+                "rdata":{
+                    "type": "string",
+                    "index": "not_analyzed",
+                    "doc_values": "true"
+                },
+                "rname":{
+                    "type": "string",
+                    "index": "not_analyzed",
+                    "doc_values": "true"
+                },
+                "rrtype":{
+                    "type": "string",
+                    "index": "not_analyzed",
+                    "doc_values": "true"
+                },
+                "id":{
+                    "type": "string",
+                    "index": "not_analyzed",
+                    "doc_values": "true"
+                },
+                "ttl":{
+                    "type": "long"
+                }
+                
+            }
+        }, 
+        "alert": {
+            "properties": {
+                "category": {
+                    "type": "string",
+                    "index": "not_analyzed",
+                    "doc_values": "true"
+                },
+                "signature":{
+                    "type": "string",
+                    "index": "not_analyzed",
+                    "doc_values": "true"
+                },
+                "action":{
+                    "type": "string",
+                    "index": "not_analyzed",
+                    "doc_values": "true"
+                },
+                "signature_id":{
+                    "type": "string",
+                    "index": "not_analyzed",
+                    "doc_values": "true"
+                },
+                "rev":{
+                    "type": "long"
+                },
+                "gid":{
+                    "type": "long"
+                },
+                "severity":{
+                    "type": "long"
+                }
+                
+            }
+        },
+        "type": {
+          "type": "string",
+          "index": "not_analyzed",
+          "doc_values": "true"
+        },
+        "tags": {
+          "type": "string"
+        },
+        "src_ip": {
+          "type": "string",
+          "index": "not_analyzed",
+          "doc_values": "true"
+        },
+        "dest_ip": {
+          "type": "string",
+          "index": "not_analyzed",
+          "doc_values": "true"
+        },
+        "event_type": {
+          "type": "string",
+          "index": "not_analyzed",
+          "doc_values": "true"
+        },
+        "file": {
+          "type": "string",
+          "index": "not_analyzed",
+          "doc_values": "true"
+        },
+        "host": {
+          "type": "string",
+          "index": "not_analyzed",
+          "doc_values": "true"
+        },
+        "dest_port": {
+          "type": "string",
+          "index": "not_analyzed",
+          "doc_values": "true"
+        },
+        "src_port": {
+          "type": "string",
+          "index": "not_analyzed",
+          "doc_values": "true"
+        },
+        "proto": {
+          "type": "string",
+          "index": "not_analyzed",
+          "doc_values": "true"
+        },
+        "timestamp": {
+          "type": "date",
+          "format": "dateOptionalTime",
+          "index": "not_analyzed"
+        },
+        "offset": {
+          "type": "string",
+          "index": "not_analyzed",
+          "doc_values": "true"
+        },
+        "@timestamp": {
+          "type": "date",
+          "format": "dateOptionalTime",
+          "index": "not_analyzed"
+        },
+        "@version": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
+

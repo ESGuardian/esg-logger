@@ -1,0 +1,258 @@
+{
+  "order": 0,
+  "template": "cisco-asa*",
+  "settings": {
+    "index.refresh_interval": "5s"
+  },
+  "mappings": {
+    "cisco-asa": {
+      "dynamic_templates": [
+        {
+          "notanalyzed": {
+            "match": "*",
+            "match_mapping_type": "string",
+            "mapping": {
+              "type": "string",
+              "index": "not_analyzed",
+              "doc_values": "true"
+            }
+          }
+        }
+      ],
+      "properties": {
+        "@timestamp": {
+          "type": "date",
+          "format": "dateOptionalTime",
+          "index": "not_analyzed"
+        },
+        "@version": {
+          "type": "string"
+        },
+        "action": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "assigned_ip": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "assigned_ipv6": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "cisco-type": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "direction": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "dst_interface": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "dst_ip": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "dst_port": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "err_dst_interface": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "err_dst_ip": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "err_icmp_code": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "err_icmp_type": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "err_protocol": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "err_src_fwuser": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "err_src_interface": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "err_src_ip": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "event-code": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "group": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "hashcode1": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "hashcode2": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "host": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "icmp_code": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "icmp_type": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "interface": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "log_msg": {
+          "type": "string"
+        },
+        "orig_dst_ip": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "orig_dst_port ": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "orig_src_ip": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "orig_src_port": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "policy_id": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "protocol": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "reason": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "src_interface": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "src_ip": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "src_port": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "syslog_facility": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "syslog_facility_code": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "syslog_severity": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "syslog_severity_code": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "tags": {
+          "type": "string"
+        },
+        "tcp_flags": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "geoip": {
+          "type": "object",
+          "properties": {
+            "area_code": {
+              "type": "long"
+            },
+            "city_name": {
+              "type": "string",
+              "index": "not_analyzed",
+              "doc_values": "true"
+            },
+            "continent_code": {
+              "type": "string"
+            },
+            "country_code2": {
+              "type": "string"
+            },
+            "country_code3": {
+              "type": "string"
+            },
+            "country_name": {
+              "type": "string",
+              "index": "not_analyzed",
+              "doc_values": "true"
+            },
+            "dma_code": {
+              "type": "long"
+            },
+            "ip": {
+              "type": "string",
+              "index": "not_analyzed",
+              "doc_values": "true"
+            },
+            "latitude": {
+              "type": "double"
+            },
+            "longitude": {
+              "type": "double"
+            },
+            "location": {
+              "type": "geo_point"
+            },
+            "postal_code": {
+              "type": "string"
+            },
+            "real_region_name": {
+              "type": "string",
+              "index": "not_analyzed",
+              "doc_values": "true"
+            },
+            "region_name": {
+              "type": "string",
+              "index": "not_analyzed",
+              "doc_values": "true"
+            },
+            "timezone": {
+              "type": "string"
+            }
+          }
+        }
+        
+      }
+    }
+  }
+}
+
