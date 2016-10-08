@@ -67,7 +67,7 @@
 
 Конфиг сурикаты проще скопировать, чем описать, поэтому делаем так:
 
-    cd~
+    cd ~
     git clone -b master https://bitbucket.org/esguardian/ESG-Logger.git
     rm /etc/suricata/suricata-debian.yaml
     cp ~/ESG-Logger/wazuh/etc/suricata/suricata-debian.yaml /etc/suricata/
@@ -76,6 +76,7 @@
     cp ~/ESG-Logger/wazuh/etc/logrotate.d/* /etc/logrotate.d/
 
 Теперь ставим менеджер сигнатур
+
     apt-get install oinkmaster
     rm /etc/oinkmaster.conf
     cp ~/ESG-Logger/wazuh/etc/* /etc/
