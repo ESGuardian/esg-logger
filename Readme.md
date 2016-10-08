@@ -134,8 +134,8 @@
 Опять же не забудем указать реальный IP машины elastic. Можем запускать forwarder.
 
     /bin/systemctl daemon-reload
-    /bin/systemctl enable logstash-forvarder.service
-    /bin/systemctl start logstash-forvarder.service 
+    /bin/systemctl enable logstash-forwarder.service
+    /bin/systemctl start logstash-forwarder.service 
 
 Всё. События пошли на elastic.
 Теперь поработаем с kibana.
