@@ -6,19 +6,135 @@
 Теперь приступим к описанию установки и конфигурации. Начнем с ELK.
 
 ## Установка и настройка ELK ##
-Прежде всего необходимо подготовить чистую виртуальную машину с Debian 8. Базовая установка системы + SSH Server (это для удобства). Далее зайти на консоль рутом.
+Прежде всего необходимо подготовить чистую виртуальную машину с Debian 8. Базовая установка системы + SSH Server (это для удобства). Условимся называть эту машину elastic. Далее зайти на консоль рутом.
 
 
     cd ~
     apt-get install git
+    apt-get install openssl
+
+Теперь нужно сделать заготовку для генерации самоподписанного сертификата для сервера (понадобится для шифрования линка со второй машиной). Надо открыть в редакторе файл `/etc/ssl/openssl.cnf` и вписать в секцию `[ v3_ca ]` нужные параметры:
+
+
+    [ v3_ca ]
+    subjectAltName = IP: elastic_server_ip
+
+Разумеется, надо вписать реальный IP машины elastic. Теперь можно продолжить.
+
     git clone -b master https://bitbucket.org/esguardian/ESG-Logger.git
     ./ESG-Logger/ELK/elk-install.sh
 
-
-
-
 В процессе установки придется принять лицензионное соглашение Oracle на Java, и задать пароль для пользователя kibana.
 
-После установки заходим на http://<your_host>/ и входим под именем kibana с тем самым паролем. 
+После установки заходим на http://your_host/ и входим под именем kibana с тем самым паролем. 
 
 В этом решении kibana прикрыта сервером nginx. Это сделано специально, чтобы можно было организовать защиту доступа, а при необходимости использовать SSL.
+
+## Установка Wazuh OSSEC и Suricata ##
+
+А вот здесь нам придется поработать вручную. Простого скрипта у меня пока нет. Прежде всего нам понадобится чистая виртуальная машина Debian 8 (базовая установка + SSH Server) с двумя сетевыми интерфейсами. Eth0 оставьте обычным интерфейсом, а на eth1 подайте поток SPAN от ваших коммутаторов. Условимся называть эту машину wazuh.
+
+Начнем с установки Wazuh OSSEC. Это просто.
+
+    apt-get update && apt-get upgrade
+    apt-get install unzip
+    apt-get install curl
+    apt-get install apt-transport-https
+    apt-key adv --fetch-keys http://ossec.wazuh.com/repos/apt/conf/ossec-key.gpg.key
+    echo -e "deb http://ossec.wazuh.com/repos/apt/debian jessie main" >> /etc/apt/sources.list.d/ossec.list
+    apt-get update
+    apt-get install gcc make git
+    apt-get install libssl-dev
+    cd ~
+    git clone -b stable https://github.com/wazuh/ossec-wazuh.git
+    cd ossec-wazuh
+    ./install.sh
+
+Проверим, что OSSEC настроен на вывод в формате JSON. Для этого откроем файл `/var/ossec/etc/ossec.conf` и убедимся что в самом верху написано так:
+
+      <global>
+        <jsonout_output>yes</jsonout_output>
+        <email_notification>no</email_notification>
+      </global>
+
+Запустим OSSEC.
+
+    /var/ossec/bin/ossec-control start
+
+Теперь установим Сурикату. Возьмем её из репозитария Debian.
+
+    apt-get install suricata
+
+Конфиг сурикаты проще скопировать, чем описать, поэтому делаем так:
+
+    cd~
+    git clone -b master https://bitbucket.org/esguardian/ESG-Logger.git
+    rm /etc/suricata/suricata-debian.yaml
+    cp ~/ESG-Logger/wazuh/etc/suricata/suricata-debian.yaml /etc/suricata/
+    rm /etc/default/suricata
+    cp ~/ESG-Logger/wazuh/etc/default/* /etc/default/
+    cp ~/ESG-Logger/wazuh/etc/logrotate.d/* /etc/logrotate.d/
+
+Теперь ставим менеджер сигнатур
+    apt-get install oinkmaster
+    rm /etc/oinkmaster.conf
+    cp ~/ESG-Logger/wazuh/etc/* /etc/
+    oinkmaster -C /etc/oinkmaster.conf -o /etc/suricata/rules
+    rm /etc/suricata/rules/decoder-events.rules
+    rm /etc/suricata/rules/stream-events.rules
+
+Последние два файла с правилами я удаляю, поскольку ничего, кроме мусора, от них нет. Запускаем сурикату.
+
+    /bin/systemctl daemon-reload
+    /bin/systemctl enable suricata.service
+    /bin/systemctl start suricata.service 
+
+Теперь установим Java.
+
+    echo "deb http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main" > /etc/apt/sources.list.d/webupd8team-java.list
+    echo "deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main" >> /etc/apt/sources.list.d/webupd8team-java.list
+    apt-key adv --keyserver keyserver.ubuntu.com --recv-keys EEA14886
+    apt-get update
+    apt-get install oracle-java8-installer
+
+Теперь logstash-forwarder (aka Lamberjack).
+
+    wget -qO - https://packages.elasticsearch.org/GPG-KEY-elasticsearch | apt-key add -
+    echo "deb https://packages.elasticsearch.org/logstashforwarder/debian stable main" | tee -a /etc/apt/sources.list
+    apt-get update
+    apt-get install logstash-forwarder
+    usermod -a -G ossec logstash-forwarder
+
+Теперь нам нужно скопировать файл с сертификатом машины elastic на машину wazuh в каталог `/opt/logstash-forwarder/`. Этот файл сгенерировался скриптом установки и лежит здесь: `/etc/logstash/logstash-forwarder.crt`. После этого необходимо на машине wazuh отредактировать файл `/etc/logstash-forwarder.conf`. Он должен стать вот таким:
+
+    {
+      "network": {
+        "servers": [ "elastic_server_ip:5043" ],
+        "ssl ca": "/opt/logstash-forwarder/logstash-forwarder.crt",
+        "timeout": 15
+      },
+      "files": [
+        {
+            "paths": [
+              "/var/ossec/logs/alerts/alerts.json"
+             ],
+            "fields": { "type": "ossec-alerts" }
+        },
+        {
+            "paths": [
+              "/var/log/suricata/eve-ids.json"
+             ],
+            "fields": { "type": "suricata-alerts" }
+        }
+    
+      ]
+    }
+
+Опять же не забудем указать реальный IP машины elastic. Можем запускать forwarder.
+
+    /bin/systemctl daemon-reload
+    /bin/systemctl enable logstash-forvarder.service
+    /bin/systemctl start logstash-forvarder.service 
+
+Всё. События пошли на elastic.
+Теперь поработаем с kibana.
