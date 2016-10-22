@@ -22,7 +22,7 @@ colheader = u"Время;Имя;Группа;IP;Страна;Город;Назн
 myquery = {"query":{\
     "bool":{\
         "must":{"match_all":{}},\
-        "filter":[{"term":{"event-code":"Remconn address assigned"}},{"range":{"@timestamp":{"gte":starttime, "lte":endtime, "format":"yyyy:MM:dd hh:mm:ss"}}}]\
+        "filter":[{"term":{"event-code":"Remconn address assigned"}},{"range":{"@timestamp":{"gte":starttime, "lte":endtime, "format":"yyyy:MM:dd HH:mm:ss"}}}]\
     }\
     },\
 "sort":{"@timestamp":{"order":"asc"}},\

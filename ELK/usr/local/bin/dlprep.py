@@ -22,7 +22,7 @@ colheader = u"Время;Пользователь;Источник;Внешни�
 myquery = {"query":{\
     "bool":{\
         "must":{"match_all":{}},\
-        "filter":[{"term":{"subtype":"dlp"}},{"range":{"@timestamp":{"gte":starttime, "lte":endtime, "format":"yyyy:MM:dd hh:mm:ss"}}}]\
+        "filter":[{"term":{"subtype":"dlp"}},{"range":{"@timestamp":{"gte":starttime, "lte":endtime, "format":"yyyy:MM:dd HH:mm:ss"}}}]\
     }\
     },\
 "sort":{"@timestamp":{"order":"asc"}},\

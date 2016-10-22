@@ -20,7 +20,7 @@ endtime=enddate + ' 09:00:00' # local time
 startdate=(today - timedelta(days=period)).strftime('%Y:%m:%d')
 starttime=startdate + ' 09:00:00'
 
-outfilename='app-' + today.strftime('%Y-%m-%d') + '.csv'
+outfilename='APP-' + today.strftime('%Y-%m-%d') + '.csv'
 outfullpath='/usr/local/reports/' + outfilename
 es = Elasticsearch()
 
@@ -33,7 +33,7 @@ if app_install :
                             "filter":[\
                                 {"bool":{\
                                     "must":[\
-                                        {"range":{"@timestamp":{"gte":starttime, "lte":endtime, "format":"yyyy:MM:dd hh:mm:ss"}}},\
+                                        {"range":{"@timestamp":{"gte":starttime, "lte":endtime, "format":"yyyy:MM:dd HH:mm:ss"}}},\
                                         {"bool": {
                                             "should":[\
                                                 {"term":{"rule.sidid":"18146"}},\
@@ -98,7 +98,7 @@ if antimalware_config :
                             "filter":[\
                                 {"bool":{\
                                     "must":[\
-                                        {"range":{"@timestamp":{"gte":starttime, "lte":endtime, "format":"yyyy:MM:dd hh:mm:ss"}}},\
+                                        {"range":{"@timestamp":{"gte":starttime, "lte":endtime, "format":"yyyy:MM:dd HH:mm:ss"}}},\
                                         {"bool": {
                                             "should":[\
                                                 {"term":{"rule.sidid":"7726"}},\
@@ -167,7 +167,7 @@ if file_integrity :
                             "filter":[\
                                 {"bool":{\
                                     "must":[\
-                                        {"range":{"@timestamp":{"gte":starttime, "lte":endtime, "format":"yyyy:MM:dd hh:mm:ss"}}},\
+                                        {"range":{"@timestamp":{"gte":starttime, "lte":endtime, "format":"yyyy:MM:dd HH:mm:ss"}}},\
                                         {"bool": {
                                             "should":[\
                                                 {"term":{"rule.sidid":"553"}},\
@@ -220,7 +220,7 @@ if app_monitor :
                             "filter":[\
                                 {"bool":{\
                                     "must":[\
-                                        {"range":{"@timestamp":{"gte":starttime, "lte":endtime, "format":"yyyy:MM:dd hh:mm:ss"}}},\
+                                        {"range":{"@timestamp":{"gte":starttime, "lte":endtime, "format":"yyyy:MM:dd HH:mm:ss"}}},\
                                         {"bool": {
                                             "should":[\
                                                 {"term":{"rule.sidid":"514"}},\
