@@ -12,7 +12,7 @@ if len(sys.argv) > 1:
 global_group = True
 local_group = True
 accounts = True
-app_monitor = False
+
 
 
 today=date.today()
@@ -87,7 +87,7 @@ if global_group :
                 except:
                     info = msg.replace(","," ").replace("\t"," ").replace(";",":").strip()
                 str += u";" + info
-            elif hit["_source"]["rule"]["sidid"] == 18215 :
+            elif hit["_source"]["rule"]["sidid"] == 18215 or hit["_source"]["rule"]["sidid"] == 18214:
                 try:
                     operator = msg.split('Group: Security ID:',1)[-1].split(' Account Domain:',1)[0].split('Account Name: ')[-1]
                 except:
@@ -134,6 +134,7 @@ if local_group :
                                             "should":[\
                                                 {"term":{"rule.sidid":"18207"}},\
                                                 {"term":{"rule.sidid":"18208"}},\
+                                                {"term":{"rule.sidid":"18209"}},\
                                             ]\
                                         }}\
                                     ]\
@@ -172,7 +173,10 @@ if local_group :
             str += u";" + operator
             group_name = msg.split("Group Name:")[-1].split("Group Domain:")[0].strip()
             str += u";" + group_name
-            member_name = msg.split("Member:")[-1].split("Account Name:")[0].strip()
+            if hit["_source"]["rule"]["sidid"] == 18207 or hit["_source"]["rule"]["sidid"] == 18208 :
+                member_name = msg.split("Member:")[-1].split("Account Name:")[0].strip()
+            else:
+                member_name = u"-"
             str += u";" + member_name             
             str += u"\n"
             out.write(str)
@@ -191,6 +195,7 @@ if accounts :
                                         {"bool": {
                                             "should":[\
                                                 {"term":{"rule.sidid":"18112"}},\
+                                                {"term":{"rule.sidid":"18110"}},\
                                             ]\
                                         }}\
                                     ]\
@@ -229,7 +234,7 @@ if accounts :
             str += u";" + operator
             info = msg.split("Subject:")[0].split(": ")[-1].strip()
             str += u";" + info
-            acc_name = msg.split("Account Name:")[-1].split("Account Domain:")[0].strip()
+            acc_name = msg.split("Account Domain:")[1].split("Account Name:")[-1].strip()
             str += u";" + acc_name             
             str += u"\n"
             out.write(str)

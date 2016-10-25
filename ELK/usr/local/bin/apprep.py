@@ -9,9 +9,9 @@ if len(sys.argv) > 1:
     period=int(sys.argv[1])
 
 app_install = True
-antimalware_config = False
+antimalware_config = True
 file_integrity = True
-app_monitor = False
+app_monitor = True
 
 
 today=date.today()
@@ -101,8 +101,9 @@ if antimalware_config :
                                         {"range":{"@timestamp":{"gte":starttime, "lte":endtime, "format":"yyyy:MM:dd HH:mm:ss"}}},\
                                         {"bool": {
                                             "should":[\
+                                                {"term":{"rule.sidid":"7721"}},\
+                                                {"term":{"rule.sidid":"7722"}},\
                                                 {"term":{"rule.sidid":"7726"}},\
-                                                {"term":{"rule.sidid":"7720"}},\
                                             ]\
                                         }}\
                                     ]\
@@ -145,12 +146,7 @@ if antimalware_config :
             str += u";" + data
             
             if data == "Microsoft Antimalware":
-                if hit["_source"]["rule"]["sidid"] == 7726:
-                    msg1 = msg.split(u"Error code:")[-1].replace(","," ").replace("\t"," ").replace(";",":").strip()
-                    msg1 = msg1.split(u"Код ошибки:")[-1].replace(","," ").replace("\t"," ").replace(";",":").strip()
-                elif hit["_source"]["rule"]["sidid"] == 7720:
-                    msg1 = msg.split(u"Old value:")[-1].replace(","," ").replace("\t"," ").replace(";",":").strip()
-                    msg1 = msg1.split(u"Старое значение:")[-1].replace(","," ").replace("\t"," ").replace(";",":").strip()
+                msg1 = msg.split(u"domain: ",1)[-1].replace(","," ").replace("\t"," ").replace(";",":").strip()     
             else:
                 msg1 = msg.replace(","," ").replace("\t"," ").replace(";",":").strip()
             str += u";" + msg1   
