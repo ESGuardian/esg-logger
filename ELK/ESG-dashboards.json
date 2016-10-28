@@ -17,23 +17,6 @@
     }
   },
   {
-    "_id": "FG-dash",
-    "_type": "dashboard",
-    "_source": {
-      "title": "FG-dash",
-      "hits": 0,
-      "description": "",
-      "panelsJSON": "[{\"col\":1,\"columns\":[\"src_ip\",\"user\",\"hostname\",\"dst_ip\",\"action\",\"log_type\",\"subtype\",\"group\",\"catdesc\",\"utmaction\",\"app\",\"appcat\",\"url\"],\"id\":\"FG-full-search\",\"panelIndex\":5,\"row\":10,\"size_x\":12,\"size_y\":5,\"sort\":[\"@timestamp\",\"desc\"],\"type\":\"search\"},{\"col\":9,\"id\":\"FG-apps\",\"panelIndex\":9,\"row\":4,\"size_x\":4,\"size_y\":3,\"type\":\"visualization\"},{\"col\":9,\"id\":\"FG-webcat\",\"panelIndex\":10,\"row\":1,\"size_x\":4,\"size_y\":3,\"type\":\"visualization\"},{\"col\":5,\"id\":\"FG-ext-host\",\"panelIndex\":12,\"row\":1,\"size_x\":4,\"size_y\":3,\"type\":\"visualization\"},{\"col\":1,\"id\":\"FG-users\",\"panelIndex\":13,\"row\":1,\"size_x\":4,\"size_y\":3,\"type\":\"visualization\"},{\"col\":1,\"id\":\"FG-user-recieved\",\"panelIndex\":14,\"row\":4,\"size_x\":4,\"size_y\":3,\"type\":\"visualization\"},{\"col\":5,\"id\":\"FG-ext-host-recieved\",\"panelIndex\":15,\"row\":4,\"size_x\":4,\"size_y\":3,\"type\":\"visualization\"},{\"id\":\"FG-subtype\",\"type\":\"visualization\",\"panelIndex\":16,\"size_x\":4,\"size_y\":3,\"col\":1,\"row\":7},{\"id\":\"FG-utm-action\",\"type\":\"visualization\",\"panelIndex\":17,\"size_x\":4,\"size_y\":3,\"col\":5,\"row\":7},{\"id\":\"FG-virus\",\"type\":\"visualization\",\"panelIndex\":18,\"size_x\":4,\"size_y\":3,\"col\":9,\"row\":7}]",
-      "optionsJSON": "{\"darkTheme\":false}",
-      "uiStateJSON": "{\"P-10\":{\"spy\":{\"mode\":{\"fill\":false,\"name\":null}}},\"P-12\":{\"spy\":{\"mode\":{\"fill\":false,\"name\":null}}},\"P-13\":{\"spy\":{\"mode\":{\"fill\":false,\"name\":null}}},\"P-16\":{\"spy\":{\"mode\":{\"name\":null,\"fill\":false}}},\"P-18\":{\"vis\":{\"legendOpen\":false}}}",
-      "version": 1,
-      "timeRestore": false,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}]}"
-      }
-    }
-  },
-  {
     "_id": "CISCO-common",
     "_type": "dashboard",
     "_source": {
@@ -51,15 +34,15 @@
     }
   },
   {
-    "_id": "OSSEC-Alerts",
+    "_id": "Zlock_dash",
     "_type": "dashboard",
     "_source": {
-      "title": "OSSEC Alerts",
+      "title": "Zlock_dash",
       "hits": 0,
       "description": "",
-      "panelsJSON": "[{\"col\":10,\"id\":\"Agents-total-alerts\",\"row\":4,\"size_x\":3,\"size_y\":3,\"type\":\"visualization\",\"panelIndex\":1},{\"col\":1,\"id\":\"Alerts-level-greater-than-9\",\"row\":4,\"size_x\":6,\"size_y\":3,\"type\":\"search\",\"panelIndex\":3,\"columns\":[\"AgentName\",\"rule.AlertLevel\",\"rule.description\"],\"sort\":[\"@timestamp\",\"desc\"]},{\"col\":1,\"id\":\"Last-alerts\",\"row\":7,\"size_x\":12,\"size_y\":5,\"type\":\"search\",\"panelIndex\":4,\"columns\":[\"AgentName\",\"AgentIP\",\"rule.sidid\",\"rule.AlertLevel\",\"rule.description\",\"full_log\"],\"sort\":[\"@timestamp\",\"desc\"]},{\"col\":7,\"id\":\"Total-Alerts-Time-Bar\",\"row\":1,\"size_x\":6,\"size_y\":3,\"type\":\"visualization\",\"panelIndex\":5},{\"col\":7,\"id\":\"Alert-level-evolution\",\"row\":4,\"size_x\":3,\"size_y\":3,\"type\":\"visualization\",\"panelIndex\":12},{\"col\":1,\"id\":\"Signature-counts\",\"row\":1,\"size_x\":6,\"size_y\":3,\"type\":\"visualization\",\"panelIndex\":13}]",
+      "panelsJSON": "[{\"col\":1,\"id\":\"Zlock_top_computers\",\"panelIndex\":1,\"row\":1,\"size_x\":4,\"size_y\":2,\"type\":\"visualization\"},{\"col\":5,\"id\":\"Zlock_top_devices\",\"panelIndex\":2,\"row\":1,\"size_x\":4,\"size_y\":2,\"type\":\"visualization\"},{\"col\":9,\"id\":\"Zlock_top_users\",\"panelIndex\":3,\"row\":1,\"size_x\":4,\"size_y\":2,\"type\":\"visualization\"},{\"col\":1,\"id\":\"Zlock_all_computers\",\"panelIndex\":4,\"row\":3,\"size_x\":4,\"size_y\":4,\"type\":\"visualization\"},{\"col\":5,\"id\":\"Zlock_all_devices\",\"panelIndex\":5,\"row\":3,\"size_x\":4,\"size_y\":4,\"type\":\"visualization\"},{\"col\":9,\"id\":\"Zlock_all_users\",\"panelIndex\":6,\"row\":3,\"size_x\":4,\"size_y\":4,\"type\":\"visualization\"},{\"col\":1,\"columns\":[\"zntf_computer\",\"zntf_user\",\"device\",\"path\",\"file_copy\"],\"id\":\"Zlock_brief\",\"panelIndex\":7,\"row\":7,\"size_x\":12,\"size_y\":6,\"sort\":[\"zntf_datetime\",\"desc\"],\"type\":\"search\"}]",
       "optionsJSON": "{\"darkTheme\":false}",
-      "uiStateJSON": "{}",
+      "uiStateJSON": "{\"P-5\":{\"spy\":{\"mode\":{\"name\":null,\"fill\":false}}}}",
       "version": 1,
       "timeRestore": false,
       "kibanaSavedObjectMeta": {
@@ -74,9 +57,43 @@
       "title": "Suricata-dash",
       "hits": 0,
       "description": "",
-      "panelsJSON": "[{\"col\":1,\"columns\":[\"alert.signature\",\"alert.severity\",\"src_ip\",\"src_port\",\"dest_ip\",\"dest_port\"],\"id\":\"Suricata-log\",\"panelIndex\":1,\"row\":4,\"size_x\":12,\"size_y\":6,\"sort\":[\"@timestamp\",\"desc\"],\"type\":\"search\"},{\"id\":\"SG-signature\",\"type\":\"visualization\",\"panelIndex\":3,\"size_x\":4,\"size_y\":3,\"col\":1,\"row\":1},{\"id\":\"SG-alerts-by-time\",\"type\":\"visualization\",\"panelIndex\":4,\"size_x\":8,\"size_y\":3,\"col\":5,\"row\":1}]",
+      "panelsJSON": "[{\"col\":1,\"columns\":[\"alert.signature\",\"alert.severity\",\"src_ip\",\"src_port\",\"dest_ip\",\"dest_port\"],\"id\":\"Suricata-log\",\"panelIndex\":1,\"row\":4,\"size_x\":12,\"size_y\":6,\"sort\":[\"@timestamp\",\"desc\"],\"type\":\"search\"},{\"col\":1,\"id\":\"SG-signature\",\"panelIndex\":3,\"row\":1,\"size_x\":4,\"size_y\":3,\"type\":\"visualization\"},{\"col\":5,\"id\":\"SG-alerts-by-time\",\"panelIndex\":4,\"row\":1,\"size_x\":4,\"size_y\":3,\"type\":\"visualization\"},{\"id\":\"SG-alerts-by-category\",\"type\":\"visualization\",\"panelIndex\":5,\"size_x\":4,\"size_y\":3,\"col\":9,\"row\":1}]",
       "optionsJSON": "{\"darkTheme\":false}",
       "uiStateJSON": "{\"P-2\":{\"vis\":{\"colors\":{\"Count\":\"#1F78C1\"},\"legendOpen\":false}},\"P-4\":{\"vis\":{\"legendOpen\":false}}}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}]}"
+      }
+    }
+  },
+  {
+    "_id": "OSSEC-Alerts",
+    "_type": "dashboard",
+    "_source": {
+      "title": "OSSEC Alerts",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"col\":1,\"columns\":[\"AgentName\",\"AgentIP\",\"rule.sidid\",\"rule.AlertLevel\",\"rule.description\",\"full_log\"],\"id\":\"Last-alerts\",\"panelIndex\":4,\"row\":6,\"size_x\":12,\"size_y\":5,\"sort\":[\"@timestamp\",\"desc\"],\"type\":\"search\"},{\"col\":5,\"id\":\"Total-Alerts-Time-Bar\",\"panelIndex\":5,\"row\":1,\"size_x\":4,\"size_y\":5,\"type\":\"visualization\"},{\"col\":1,\"id\":\"Signature-counts\",\"panelIndex\":13,\"row\":1,\"size_x\":4,\"size_y\":5,\"type\":\"visualization\"},{\"id\":\"OSSEC-agent-total-events\",\"type\":\"visualization\",\"panelIndex\":14,\"size_x\":4,\"size_y\":5,\"col\":9,\"row\":1}]",
+      "optionsJSON": "{\"darkTheme\":false}",
+      "uiStateJSON": "{}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}]}"
+      }
+    }
+  },
+  {
+    "_id": "FG-dash",
+    "_type": "dashboard",
+    "_source": {
+      "title": "FG-dash",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"col\":9,\"id\":\"FG-webcat\",\"panelIndex\":10,\"row\":8,\"size_x\":4,\"size_y\":5,\"type\":\"visualization\"},{\"col\":1,\"id\":\"FG-subtype\",\"panelIndex\":16,\"row\":6,\"size_x\":4,\"size_y\":2,\"type\":\"visualization\"},{\"col\":5,\"id\":\"FG-utm-action\",\"panelIndex\":17,\"row\":4,\"size_x\":4,\"size_y\":2,\"type\":\"visualization\"},{\"col\":5,\"id\":\"FG-events-by-time\",\"panelIndex\":21,\"row\":1,\"size_x\":4,\"size_y\":3,\"type\":\"visualization\"},{\"col\":5,\"id\":\"FG-virus\",\"panelIndex\":22,\"row\":6,\"size_x\":4,\"size_y\":2,\"type\":\"visualization\"},{\"col\":1,\"id\":\"FG-users-by-bytes-sent\",\"panelIndex\":23,\"row\":1,\"size_x\":4,\"size_y\":5,\"type\":\"visualization\"},{\"col\":9,\"id\":\"FG-users-by-bytes-recieved\",\"panelIndex\":24,\"row\":1,\"size_x\":4,\"size_y\":5,\"type\":\"visualization\"},{\"col\":1,\"id\":\"FG-ext-hosts\",\"panelIndex\":25,\"row\":8,\"size_x\":4,\"size_y\":5,\"type\":\"visualization\"},{\"col\":5,\"id\":\"FG-dst-ip\",\"panelIndex\":26,\"row\":8,\"size_x\":4,\"size_y\":5,\"type\":\"visualization\"},{\"col\":9,\"id\":\"FG-apps\",\"panelIndex\":27,\"row\":6,\"size_x\":4,\"size_y\":2,\"type\":\"visualization\"},{\"id\":\"FG-full-search\",\"type\":\"search\",\"panelIndex\":28,\"size_x\":12,\"size_y\":20,\"col\":1,\"row\":13,\"columns\":[\"src_ip\",\"user\",\"hostname\",\"dst_ip\",\"action\",\"log_type\",\"subtype\",\"group\",\"catdesc\",\"utmaction\",\"app\",\"appcat\",\"url\"],\"sort\":[\"@timestamp\",\"desc\"]}]",
+      "optionsJSON": "{\"darkTheme\":false}",
+      "uiStateJSON": "{\"P-10\":{\"spy\":{\"mode\":{\"fill\":false,\"name\":null}}},\"P-16\":{\"spy\":{\"mode\":{\"fill\":false,\"name\":null}}},\"P-21\":{\"vis\":{\"legendOpen\":false}},\"P-25\":{\"spy\":{\"mode\":{\"fill\":false,\"name\":null}}}}",
       "version": 1,
       "timeRestore": false,
       "kibanaSavedObjectMeta": {
@@ -106,38 +123,6 @@
       "version": 1,
       "kibanaSavedObjectMeta": {
         "searchSourceJSON": "{\"index\":\"ossec-*\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}},\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}}},\"filter\":[]}"
-      }
-    }
-  },
-  {
-    "_id": "FG-full-search",
-    "_type": "search",
-    "_source": {
-      "title": "FG-full-search",
-      "description": "",
-      "hits": 0,
-      "columns": [
-        "src_ip",
-        "user",
-        "hostname",
-        "dst_ip",
-        "action",
-        "log_type",
-        "subtype",
-        "group",
-        "catdesc",
-        "utmaction",
-        "app",
-        "appcat",
-        "url"
-      ],
-      "sort": [
-        "@timestamp",
-        "desc"
-      ],
-      "version": 1,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"fortigate-*\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}},\"filter\":[{\"$state\":{\"store\":\"appState\"},\"exists\":{\"field\":\"log_type\"},\"meta\":{\"alias\":null,\"disabled\":false,\"index\":\"fortigate-*\",\"key\":\"exists\",\"negate\":false,\"value\":\"log_type\"}}],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647}}"
       }
     }
   },
@@ -212,6 +197,31 @@
     }
   },
   {
+    "_id": "CISCO-remote-access-users",
+    "_type": "search",
+    "_source": {
+      "title": "CISCO-remote-access-users",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "src_ip",
+        "assigned_ip",
+        "user",
+        "group",
+        "geoip.country_code2",
+        "geoip.city_name"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"cisco-asa-*\",\"query\":{\"query_string\":{\"query\":\"event-code:\\\"Remconn address assigned\\\"\",\"analyze_wildcard\":true}},\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647}}"
+      }
+    }
+  },
+  {
     "_id": "CISCO-common",
     "_type": "search",
     "_source": {
@@ -239,19 +249,70 @@
     }
   },
   {
-    "_id": "CISCO-remote-access-users",
+    "_id": "Zlock_brief",
     "_type": "search",
     "_source": {
-      "title": "CISCO-remote-access-users",
+      "title": "Zlock_brief",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "zntf_computer",
+        "zntf_user",
+        "device",
+        "path",
+        "file_copy"
+      ],
+      "sort": [
+        "zntf_datetime",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"zlock-*\",\"query\":{\"query_string\":{\"query\":\"_exists_:file_copy\",\"analyze_wildcard\":true}},\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647}}"
+      }
+    }
+  },
+  {
+    "_id": "Zlock_common",
+    "_type": "search",
+    "_source": {
+      "title": "Zlock_common",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_source"
+      ],
+      "sort": [
+        "zntf_datetime",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"zlock-*\",\"query\":{\"query_string\":{\"query\":\"_exists_:file_copy\",\"analyze_wildcard\":true}},\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647}}"
+      }
+    }
+  },
+  {
+    "_id": "FG-full-search",
+    "_type": "search",
+    "_source": {
+      "title": "FG-full-search",
       "description": "",
       "hits": 0,
       "columns": [
         "src_ip",
-        "assigned_ip",
         "user",
+        "hostname",
+        "dst_ip",
+        "action",
+        "log_type",
+        "subtype",
         "group",
-        "geoip.country_code2",
-        "geoip.city_name"
+        "catdesc",
+        "utmaction",
+        "app",
+        "appcat",
+        "url"
       ],
       "sort": [
         "@timestamp",
@@ -259,7 +320,7 @@
       ],
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"cisco-asa-*\",\"query\":{\"query_string\":{\"query\":\"event-code:\\\"Remconn address assigned\\\"\",\"analyze_wildcard\":true}},\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647}}"
+        "searchSourceJSON": "{\"index\":\"fortigate-*\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}},\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647}}"
       }
     }
   },
@@ -572,20 +633,6 @@
     }
   },
   {
-    "_id": "FG-virus",
-    "_type": "visualization",
-    "_source": {
-      "title": "FG-virus",
-      "visState": "{\"title\":\"FG-virus\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"virus\",\"size\":20,\"order\":\"desc\",\"orderBy\":\"2\"}},{\"id\":\"2\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}}],\"listeners\":{}}",
-      "uiStateJSON": "{\"vis\":{\"colors\":{\"Count\":\"#3F6833\"}}}",
-      "description": "",
-      "version": 1,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"fortigate-*\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"subtype:virus\"}},\"filter\":[{\"$state\":{\"store\":\"appState\"},\"exists\":{\"field\":\"log_type\"},\"meta\":{\"alias\":null,\"disabled\":false,\"index\":\"fortigate-*\",\"key\":\"exists\",\"negate\":false,\"value\":\"log_type\"}}]}"
-      }
-    }
-  },
-  {
     "_id": "PCI-DSS:-Requirement-6.4",
     "_type": "visualization",
     "_source": {
@@ -684,116 +731,11 @@
     }
   },
   {
-    "_id": "FG-user-recieved",
-    "_type": "visualization",
-    "_source": {
-      "title": "FG-user-recieved",
-      "visState": "{\"title\":\"New Visualization\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":true},\"aggs\":[{\"id\":\"1\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"bytes_recieved\"}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"user\",\"size\":25,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
-      "uiStateJSON": "{}",
-      "description": "",
-      "savedSearchId": "FG-full-search",
-      "version": 1,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"filter\":[]}"
-      }
-    }
-  },
-  {
-    "_id": "FG-ext-host",
-    "_type": "visualization",
-    "_source": {
-      "title": "FG-ext-host",
-      "visState": "{\"title\":\"FG-ext-host\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":true},\"aggs\":[{\"id\":\"1\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"bytes_sent\"}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"hostname\",\"size\":25,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
-      "uiStateJSON": "{}",
-      "description": "",
-      "savedSearchId": "FG-full-search",
-      "version": 1,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"filter\":[]}"
-      }
-    }
-  },
-  {
     "_id": "FG-utm-action",
     "_type": "visualization",
     "_source": {
       "title": "FG-utm-action",
       "visState": "{\"title\":\"FG-utm-action\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":true},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"utmaction\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
-      "uiStateJSON": "{}",
-      "description": "",
-      "savedSearchId": "FG-full-search",
-      "version": 1,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"filter\":[]}"
-      }
-    }
-  },
-  {
-    "_id": "FG-users",
-    "_type": "visualization",
-    "_source": {
-      "title": "FG-users",
-      "visState": "{\"title\":\"FG-users\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":true},\"aggs\":[{\"id\":\"1\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"bytes_sent\"}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"user\",\"size\":25,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
-      "uiStateJSON": "{}",
-      "description": "",
-      "savedSearchId": "FG-full-search",
-      "version": 1,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"filter\":[]}"
-      }
-    }
-  },
-  {
-    "_id": "FG-webcat",
-    "_type": "visualization",
-    "_source": {
-      "title": "FG-webcat",
-      "visState": "{\"title\":\"FG-webcat\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":true},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"catdesc\",\"size\":20,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
-      "uiStateJSON": "{}",
-      "description": "",
-      "savedSearchId": "FG-full-search",
-      "version": 1,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"filter\":[]}"
-      }
-    }
-  },
-  {
-    "_id": "FG-subtype",
-    "_type": "visualization",
-    "_source": {
-      "title": "FG-subtype",
-      "visState": "{\"title\":\"FG-subtype\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":true},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"subtype\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
-      "uiStateJSON": "{}",
-      "description": "",
-      "savedSearchId": "FG-full-search",
-      "version": 1,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"filter\":[]}"
-      }
-    }
-  },
-  {
-    "_id": "FG-apps",
-    "_type": "visualization",
-    "_source": {
-      "title": "FG-apps",
-      "visState": "{\"title\":\"FG-apps\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":true},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"app\",\"size\":20,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
-      "uiStateJSON": "{}",
-      "description": "",
-      "savedSearchId": "FG-full-search",
-      "version": 1,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"filter\":[]}"
-      }
-    }
-  },
-  {
-    "_id": "FG-ext-host-recieved",
-    "_type": "visualization",
-    "_source": {
-      "title": "FG-ext-host-recieved",
-      "visState": "{\"title\":\"FG-ext-host-recieved\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":true},\"aggs\":[{\"id\":\"1\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"bytes_recieved\"}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"hostname\",\"size\":25,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
       "uiStateJSON": "{}",
       "description": "",
       "savedSearchId": "FG-full-search",
@@ -844,6 +786,261 @@
       "version": 1,
       "kibanaSavedObjectMeta": {
         "searchSourceJSON": "{\"index\":\"suricata-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Zlock_all_computers",
+    "_type": "visualization",
+    "_source": {
+      "title": "Zlock_all_computers",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"zntf_computer\",\"size\":500,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"All Computers\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "Zlock_common",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Zlock_all_devices",
+    "_type": "visualization",
+    "_source": {
+      "title": "Zlock_all_devices",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"device\",\"size\":500,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"All Devices\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "Zlock_common",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Zlock_all_users",
+    "_type": "visualization",
+    "_source": {
+      "title": "Zlock_all_users",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"zntf_user\",\"size\":200,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"All Userc\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "Zlock_common",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Zlock_top_computers",
+    "_type": "visualization",
+    "_source": {
+      "title": "Zlock_top_computers",
+      "visState": "{\"title\":\"Zlock_top_computers\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":true},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"zntf_computer\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"TOP 10 Computers\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "Zlock_common",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Zlock_top_devices",
+    "_type": "visualization",
+    "_source": {
+      "title": "Zlock_top_devices",
+      "visState": "{\"title\":\"Zlock_top_devices\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":true},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"device\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"TOP 10 Devices\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "Zlock_common",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Zlock_top_users",
+    "_type": "visualization",
+    "_source": {
+      "title": "Zlock_top_users",
+      "visState": "{\"title\":\"Zlock_top_users\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":true},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"zntf_user\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"TOP 10 users\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "Zlock_common",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "OSSEC-agent-total-events",
+    "_type": "visualization",
+    "_source": {
+      "title": "OSSEC-agent-total-events",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"AgentName\",\"size\":300,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "Last-alerts",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "SG-alerts-by-category",
+    "_type": "visualization",
+    "_source": {
+      "title": "SG-alerts-by-category",
+      "visState": "{\"aggs\":[{\"id\":\"1\",\"params\":{},\"schema\":\"metric\",\"type\":\"count\"},{\"id\":\"2\",\"params\":{\"field\":\"alert.category\",\"order\":\"desc\",\"orderBy\":\"1\",\"size\":100},\"schema\":\"bucket\",\"type\":\"terms\"}],\"listeners\":{},\"params\":{\"perPage\":10,\"showMeticsAtAllLevels\":false,\"showPartialRows\":false},\"title\":\"Suricata-alerts-by-category\",\"type\":\"table\"}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "Suricata-log",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "FG-events-by-time",
+    "_type": "visualization",
+    "_source": {
+      "title": "FG-events-by-time",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"colors\":{\"Count\":\"#3F6833\"}}}",
+      "description": "",
+      "savedSearchId": "FG-full-search",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "FG-users-by-bytes-recieved",
+    "_type": "visualization",
+    "_source": {
+      "title": "FG-users-by-bytes-recieved",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"bytes_recieved\"}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"user\",\"size\":200,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "FG-full-search",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "FG-users-by-bytes-sent",
+    "_type": "visualization",
+    "_source": {
+      "title": "FG-users-by-bytes-sent",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"bytes_sent\"}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"user\",\"size\":200,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "FG-full-search",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "FG-ext-hosts",
+    "_type": "visualization",
+    "_source": {
+      "title": "FG-ext-hosts",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"hostname\",\"size\":10000,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "FG-full-search",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "FG-webcat",
+    "_type": "visualization",
+    "_source": {
+      "title": "FG-webcat",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"catdesc\",\"size\":300,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "FG-full-search",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "FG-subtype",
+    "_type": "visualization",
+    "_source": {
+      "title": "FG-subtype",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"subtype\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "FG-full-search",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "FG-virus",
+    "_type": "visualization",
+    "_source": {
+      "title": "FG-virus",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"virus\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "FG-full-search",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "FG-dst-ip",
+    "_type": "visualization",
+    "_source": {
+      "title": "FG-dst-ip",
+      "visState": "{\"title\":\"FG-dst-ip\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"dst_ip\",\"size\":10000,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "FG-full-search",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "FG-apps",
+    "_type": "visualization",
+    "_source": {
+      "title": "FG-apps",
+      "visState": "{\"aggs\":[{\"id\":\"1\",\"params\":{},\"schema\":\"metric\",\"type\":\"count\"},{\"id\":\"2\",\"params\":{\"field\":\"appcat\",\"order\":\"desc\",\"orderBy\":\"1\",\"size\":300},\"schema\":\"bucket\",\"type\":\"terms\"}],\"listeners\":{},\"params\":{\"perPage\":10,\"showMeticsAtAllLevels\":false,\"showPartialRows\":false},\"title\":\"FG-app\",\"type\":\"table\"}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "FG-full-search",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
       }
     }
   }
