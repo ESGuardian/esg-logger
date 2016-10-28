@@ -731,21 +731,6 @@
     }
   },
   {
-    "_id": "FG-utm-action",
-    "_type": "visualization",
-    "_source": {
-      "title": "FG-utm-action",
-      "visState": "{\"title\":\"FG-utm-action\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":true},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"utmaction\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
-      "uiStateJSON": "{}",
-      "description": "",
-      "savedSearchId": "FG-full-search",
-      "version": 1,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"filter\":[]}"
-      }
-    }
-  },
-  {
     "_id": "SG-signature",
     "_type": "visualization",
     "_source": {
@@ -1035,6 +1020,21 @@
     "_source": {
       "title": "FG-apps",
       "visState": "{\"aggs\":[{\"id\":\"1\",\"params\":{},\"schema\":\"metric\",\"type\":\"count\"},{\"id\":\"2\",\"params\":{\"field\":\"appcat\",\"order\":\"desc\",\"orderBy\":\"1\",\"size\":300},\"schema\":\"bucket\",\"type\":\"terms\"}],\"listeners\":{},\"params\":{\"perPage\":10,\"showMeticsAtAllLevels\":false,\"showPartialRows\":false},\"title\":\"FG-app\",\"type\":\"table\"}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "FG-full-search",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "FG-utm-action",
+    "_type": "visualization",
+    "_source": {
+      "title": "FG-utm-action",
+      "visState": "{\"title\":\"FG-utm-action\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":true},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"action\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"utmaction\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
       "uiStateJSON": "{}",
       "description": "",
       "savedSearchId": "FG-full-search",
