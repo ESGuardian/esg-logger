@@ -1,7 +1,8 @@
 #! /usr/bin/python
 # -*- coding: utf8 -*-
 import sys
-from datetime import date, timedelta
+from datetime import date, timedelta, datetime
+from pytz import timezone
 from elasticsearch import Elasticsearch 
 import codecs
 period=1
@@ -33,7 +34,7 @@ if app_install :
                             "filter":[\
                                 {"bool":{\
                                     "must":[\
-                                        {"range":{"@timestamp":{"gte":starttime, "lte":endtime, "format":"yyyy:MM:dd HH:mm:ss"}}},\
+                                        {"range":{"@timestamp":{"gte":starttime, "lte":endtime, "format":"yyyy:MM:dd HH:mm:ss", "time_zone": "+03:00"}}},\
                                         {"bool": {
                                             "should":[\
                                                 {"term":{"rule.sidid":"18146"}},\
@@ -53,7 +54,11 @@ if app_install :
         out.write(tabheader)
         out.write(colheader)
         for hit in res['hits']['hits']:
-            str = hit["_source"]["@timestamp"].replace("T"," ").split(".")[0]
+            timestr = hit["_source"]["@timestamp"].replace("T"," ").split(".")[0]
+            timeUTC = datetime.strptime(timestr, "%Y-%m-%d %H:%M:%S")
+            timeUTC = timeUTC.replace(tzinfo=timezone('UTC'))
+            timeLocal = timeUTC.astimezone(timezone('Europe/Moscow'))
+            str = timeLocal.strftime("%Y-%m-%d %H:%M:%S")
             try:
                 str += u";" + hit["_source"]["rule"]["description"]
             except:
@@ -98,7 +103,7 @@ if antimalware_config :
                             "filter":[\
                                 {"bool":{\
                                     "must":[\
-                                        {"range":{"@timestamp":{"gte":starttime, "lte":endtime, "format":"yyyy:MM:dd HH:mm:ss"}}},\
+                                        {"range":{"@timestamp":{"gte":starttime, "lte":endtime, "format":"yyyy:MM:dd HH:mm:ss", "time_zone": "+03:00"}}},\
                                         {"bool": {
                                             "should":[\
                                                 {"term":{"rule.sidid":"7721"}},\
@@ -119,7 +124,11 @@ if antimalware_config :
         out.write(tabheader)
         out.write(colheader)
         for hit in res['hits']['hits']:
-            str = hit["_source"]["@timestamp"].replace("T"," ").split(".")[0]
+            timestr = hit["_source"]["@timestamp"].replace("T"," ").split(".")[0]
+            timeUTC = datetime.strptime(timestr, "%Y-%m-%d %H:%M:%S")
+            timeUTC = timeUTC.replace(tzinfo=timezone('UTC'))
+            timeLocal = timeUTC.astimezone(timezone('Europe/Moscow'))
+            str = timeLocal.strftime("%Y-%m-%d %H:%M:%S")
             try:
                 str += u";" + hit["_source"]["rule"]["description"]
             except:
@@ -163,7 +172,7 @@ if file_integrity :
                             "filter":[\
                                 {"bool":{\
                                     "must":[\
-                                        {"range":{"@timestamp":{"gte":starttime, "lte":endtime, "format":"yyyy:MM:dd HH:mm:ss"}}},\
+                                        {"range":{"@timestamp":{"gte":starttime, "lte":endtime, "format":"yyyy:MM:dd HH:mm:ss", "time_zone": "+03:00"}}},\
                                         {"bool": {
                                             "should":[\
                                                 {"term":{"rule.sidid":"553"}},\
@@ -185,7 +194,11 @@ if file_integrity :
         out.write(tabheader)
         out.write(colheader)
         for hit in res['hits']['hits']:
-            str = hit["_source"]["@timestamp"].replace("T"," ").split(".")[0]
+            timestr = hit["_source"]["@timestamp"].replace("T"," ").split(".")[0]
+            timeUTC = datetime.strptime(timestr, "%Y-%m-%d %H:%M:%S")
+            timeUTC = timeUTC.replace(tzinfo=timezone('UTC'))
+            timeLocal = timeUTC.astimezone(timezone('Europe/Moscow'))
+            str = timeLocal.strftime("%Y-%m-%d %H:%M:%S")
             try:
                 str += u";" + hit["_source"]["rule"]["description"]
             except:
@@ -216,7 +229,7 @@ if app_monitor :
                             "filter":[\
                                 {"bool":{\
                                     "must":[\
-                                        {"range":{"@timestamp":{"gte":starttime, "lte":endtime, "format":"yyyy:MM:dd HH:mm:ss"}}},\
+                                        {"range":{"@timestamp":{"gte":starttime, "lte":endtime, "format":"yyyy:MM:dd HH:mm:ss", "time_zone": "+03:00"}}},\
                                         {"bool": {
                                             "should":[\
                                                 {"term":{"rule.sidid":"514"}},\
@@ -235,7 +248,11 @@ if app_monitor :
         out.write(tabheader)
         out.write(colheader)
         for hit in res['hits']['hits']:
-            str = hit["_source"]["@timestamp"].replace("T"," ").split(".")[0]
+            timestr = hit["_source"]["@timestamp"].replace("T"," ").split(".")[0]
+            timeUTC = datetime.strptime(timestr, "%Y-%m-%d %H:%M:%S")
+            timeUTC = timeUTC.replace(tzinfo=timezone('UTC'))
+            timeLocal = timeUTC.astimezone(timezone('Europe/Moscow'))
+            str = timeLocal.strftime("%Y-%m-%d %H:%M:%S")
             try:
                 str += u";" + hit["_source"]["rule"]["description"]
             except:

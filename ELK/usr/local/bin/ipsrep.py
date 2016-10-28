@@ -1,7 +1,8 @@
 #! /usr/bin/python
 # -*- coding: utf8 -*-
 import sys
-from datetime import date, timedelta
+from datetime import date, timedelta, datetime
+from pytz import timezone
 from elasticsearch import Elasticsearch 
 import codecs
 period=1
@@ -25,7 +26,7 @@ myquery =   {"query":\
             "filter":[\
                 {"bool":{\
                     "must":[\
-                        {"range":{"@timestamp":{"gte":starttime, "lte":endtime, "format":"yyyy:MM:dd HH:mm:ss"}}},\
+                        {"range":{"@timestamp":{"gte":starttime, "lte":endtime, "format":"yyyy:MM:dd HH:mm:ss", "time_zone": "+03:00"}}},\
                         {"bool": {
                             "should":[\
                                 {"term":{"alert.category":"A Network Trojan was Detected"}},\
@@ -64,7 +65,11 @@ with codecs.open(outfullpath, 'a', encoding="utf8") as out:
                 str = u"\n\n" + str
         else :
             prev_str = str
-        str += u";" + hit["_source"]["@timestamp"].replace("T"," ").split(".")[0]
+        timestr = hit["_source"]["@timestamp"].replace("T"," ").split(".")[0]
+        timeUTC = datetime.strptime(timestr, "%Y-%m-%d %H:%M:%S")
+        timeUTC = timeUTC.replace(tzinfo=timezone('UTC'))
+        timeLocal = timeUTC.astimezone(timezone('Europe/Moscow'))
+        str += u";" + timeLocal.strftime("%Y-%m-%d %H:%M:%S")
         try:
             str += u";" + hit["_source"]["src_ip"]
         except:

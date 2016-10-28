@@ -2,7 +2,8 @@
 # -*- coding: utf8 -*-
 import sys
 import string
-from datetime import date, timedelta
+from datetime import date, timedelta, datetime
+from pytz import timezone
 from elasticsearch import Elasticsearch 
 import codecs
 period=1
@@ -34,7 +35,7 @@ if global_group :
                             "filter":[\
                                 {"bool":{\
                                     "must":[\
-                                        {"range":{"@timestamp":{"gte":starttime, "lte":endtime, "format":"yyyy:MM:dd HH:mm:ss"}}},\
+                                        {"range":{"@timestamp":{"gte":starttime, "lte":endtime, "format":"yyyy:MM:dd HH:mm:ss", "time_zone": "+03:00"}}},\
                                         {"bool": {
                                             "should":[\
                                                 {"term":{"rule.sidid":"18202"}},\
@@ -57,7 +58,11 @@ if global_group :
         out.write(tabheader)
         out.write(colheader)
         for hit in res['hits']['hits']:
-            str = hit["_source"]["@timestamp"].replace("T"," ").split(".")[0]
+            timestr = hit["_source"]["@timestamp"].replace("T"," ").split(".")[0]
+            timeUTC = datetime.strptime(timestr, "%Y-%m-%d %H:%M:%S")
+            timeUTC = timeUTC.replace(tzinfo=timezone('UTC'))
+            timeLocal = timeUTC.astimezone(timezone('Europe/Moscow'))
+            str = timeLocal.strftime("%Y-%m-%d %H:%M:%S")
             try:
                 str += u";" + hit["_source"]["rule"]["description"]
             except:
@@ -129,7 +134,7 @@ if local_group :
                             "filter":[\
                                 {"bool":{\
                                     "must":[\
-                                        {"range":{"@timestamp":{"gte":starttime, "lte":endtime, "format":"yyyy:MM:dd HH:mm:ss"}}},\
+                                        {"range":{"@timestamp":{"gte":starttime, "lte":endtime, "format":"yyyy:MM:dd HH:mm:ss", "time_zone": "+03:00"}}},\
                                         {"bool": {
                                             "should":[\
                                                 {"term":{"rule.sidid":"18207"}},\
@@ -150,7 +155,11 @@ if local_group :
         out.write(tabheader)
         out.write(colheader)
         for hit in res['hits']['hits']:
-            str = hit["_source"]["@timestamp"].replace("T"," ").split(".")[0]
+            timestr = hit["_source"]["@timestamp"].replace("T"," ").split(".")[0]
+            timeUTC = datetime.strptime(timestr, "%Y-%m-%d %H:%M:%S")
+            timeUTC = timeUTC.replace(tzinfo=timezone('UTC'))
+            timeLocal = timeUTC.astimezone(timezone('Europe/Moscow'))
+            str = timeLocal.strftime("%Y-%m-%d %H:%M:%S")
             try:
                 str += u";" + hit["_source"]["rule"]["description"]
             except:
@@ -191,7 +200,7 @@ if accounts :
                             "filter":[\
                                 {"bool":{\
                                     "must":[\
-                                        {"range":{"@timestamp":{"gte":starttime, "lte":endtime, "format":"yyyy:MM:dd HH:mm:ss"}}},\
+                                        {"range":{"@timestamp":{"gte":starttime, "lte":endtime, "format":"yyyy:MM:dd HH:mm:ss", "time_zone": "+03:00"}}},\
                                         {"bool": {
                                             "should":[\
                                                 {"term":{"rule.sidid":"18112"}},\
@@ -211,7 +220,11 @@ if accounts :
         out.write(tabheader)
         out.write(colheader)
         for hit in res['hits']['hits']:
-            str = hit["_source"]["@timestamp"].replace("T"," ").split(".")[0]
+            timestr = hit["_source"]["@timestamp"].replace("T"," ").split(".")[0]
+            timeUTC = datetime.strptime(timestr, "%Y-%m-%d %H:%M:%S")
+            timeUTC = timeUTC.replace(tzinfo=timezone('UTC'))
+            timeLocal = timeUTC.astimezone(timezone('Europe/Moscow'))
+            str = timeLocal.strftime("%Y-%m-%d %H:%M:%S")
             try:
                 str += u";" + hit["_source"]["rule"]["description"]
             except:

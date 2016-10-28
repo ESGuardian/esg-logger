@@ -1,7 +1,8 @@
 #! /usr/bin/python
 # -*- coding: utf8 -*-
 import sys
-from datetime import date, timedelta
+from datetime import date, timedelta, datetime
+from pytz import timezone
 from elasticsearch import Elasticsearch 
 import codecs
 period=1
@@ -22,7 +23,7 @@ colheader = u"Время;Имя;Группа;IP;Страна;Город;Назн
 myquery = {"query":{\
     "bool":{\
         "must":{"match_all":{}},\
-        "filter":[{"term":{"event-code":"Remconn address assigned"}},{"range":{"@timestamp":{"gte":starttime, "lte":endtime, "format":"yyyy:MM:dd HH:mm:ss"}}}]\
+        "filter":[{"term":{"event-code":"Remconn address assigned"}},{"range":{"@timestamp":{"gte":starttime, "lte":endtime, "format":"yyyy:MM:dd HH:mm:ss", "time_zone": "+03:00"}}}]\
     }\
     },\
 "sort":{"@timestamp":{"order":"asc"}},\
@@ -35,7 +36,11 @@ with codecs.open(outfullpath, 'a', encoding="utf8") as out:
     out.write(tabheader)
     out.write(colheader)
     for hit in res['hits']['hits']:
-        str = hit["_source"]["@timestamp"].replace("T"," ").split(".")[0]
+        timestr = hit["_source"]["@timestamp"].replace("T"," ").split(".")[0]
+        timeUTC = datetime.strptime(timestr, "%Y-%m-%d %H:%M:%S")
+        timeUTC = timeUTC.replace(tzinfo=timezone('UTC'))
+        timeLocal = timeUTC.astimezone(timezone('Europe/Moscow'))
+        str = timeLocal.strftime("%Y-%m-%d %H:%M:%S")
         str += u";" + hit["_source"]["user"]
         str += u";" + hit["_source"]["group"]
         str += u";" + hit["_source"]["src_ip"]
