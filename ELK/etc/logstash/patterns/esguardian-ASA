@@ -75,7 +75,8 @@ ESGCISCOFW722051 Group <%{DATA:group}> User <%{DATA:user}> IP <%{IP:src_ip}> IPv
 # ASA-4-722037 
 ESGCISCOFW722037 Group <%{DATA:group}> User <%{DATA:user}> IP <%{IP:src_ip}> SVC closing connection: %{GREEDYDATA:reason}\.
 # ASA-4-113019 
-ESGCISCOFW113019 Group = %{DATA:group}, Username = %{DATA:user}, IP = %{IP:src_ip}, %{GREEDYDATA:action}\. Session Type: %{WORD:session_type}, Duration: %{DATA:duration}, Bytes xmt: %{INT:bytes_xmt}, Bytes rcv: %{INT:bytes_rcv}, Reason: %{GREEDYDATA:reason}
+ESGCISCOFW113019 Group = %{DATA:group}, Username = %{DATA:user}, IP = %{IP:src_ip}, %{DATA:action}\. Session Type: %{DATA:session_type}, Duration: %{DATA:duration}, Bytes xmt: %{INT:bytes_xmt}, Bytes rcv: %{INT:bytes_rcv}, Reason: %{GREEDYDATA:reason}
 
-
+# ASA-4-750003, ASA-4-750012  
+ESGCISCOFW7500_03_12 Local:%{IP:src_ip}:%{INT:src_port} Remote:%{IP:dst_ip}:%{INT:dst_port} Username:%{DATA:user} IKEv2 %{GREEDYDATA:reason}
  

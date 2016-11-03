@@ -23,7 +23,9 @@ bin/systemctl daemon-reload
 
 wget https://download.elastic.co/logstash/logstash/packages/debian/logstash-2.4.0_all.deb
 dpkg --install logstash-2.4.0_all.deb
-cp ~/ESG-Logger/ELK/etc/logstash/conf.d/*.conf /etc/logstash/conf.d/
+cp ~/ESG-Logger/ELK/etc/logstash/conf.d/01-fortigate.conf /etc/logstash/conf.d/
+cp ~/ESG-Logger/ELK/etc/logstash/conf.d/02-wazuh.conf /etc/logstash/conf.d/
+cp ~/ESG-Logger/ELK/etc/logstash/conf.d/04-cisco.conf /etc/logstash/conf.d/
 mkdir /etc/logstash/patterns
 cp ~/ESG-Logger/ELK/etc/logstash/patterns/* /etc/logstash/patterns/
 cp ~/ESG-Logger/ELK/etc/logstash/*.json /etc/logstash/
