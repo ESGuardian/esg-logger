@@ -105,12 +105,7 @@
     curl https://packages.elasticsearch.org/GPG-KEY-elasticsearch | apt-key add -
     echo "deb https://packages.elastic.co/beats/apt stable main" | tee -a /etc/apt/sources.list.d/beats.list
     apt-get update && apt-get install filebeat
-    /bin/systemctl daemon-reload
-    /bin/systemctl enable filebeat.service
-    service filebeat start
-
-
-
+    
 
 
 Теперь нам нужно скопировать файл с сертификатом машины elastic на машину wazuh в каталог `/etc/filebeat/`. Этот файл сгенерировался скриптом установки и лежит здесь: `/etc/logstash/logstash-forwarder.crt`. После этого необходимо на машине wazuh отредактировать файл `/etc/filebeat/filebeat.yml`. Он должен стать вот таким:
