@@ -44,7 +44,7 @@ LS_OPTS="--path.settings ${LS_SETTINGS_DIR}"
 [ -r /etc/sysconfig/$name ] && . /etc/sysconfig/$name
 
 program=/usr/share/logstash/bin/logstash
-args="agent -f ${LS_CONF_DIR} -l ${LS_LOG_FILE} ${LS_OPTS}"
+args="-f ${LS_CONF_DIR} -l ${LS_LOG_FILE} ${LS_OPTS}"
 
 quiet() {
   "$@" > /dev/null 2>&1

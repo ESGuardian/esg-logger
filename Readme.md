@@ -30,6 +30,8 @@
 
 В этом решении kibana прикрыта сервером nginx. Это сделано специально, чтобы можно было организовать защиту доступа, а при необходимости использовать SSL.
 
+ВАЖНО! В текущей конфигурации параметры резервирования памяти для elasticsearch установлены в расчете на то, что на машине имеется по крайней мере 12GB оперативной памяти. Если не знаете где это поменять, смотрите мою статью [elastic для маленьких](https://esguardian.ru/2016/12/25/elastic-for-little-ones-optimize-for-a-small-company/)
+
 ## Установка Wazuh OSSEC и Suricata ##
 
 А вот здесь нам придется поработать вручную. Простого скрипта у меня пока нет. Прежде всего нам понадобится чистая виртуальная машина Debian 8 (базовая установка + SSH Server) с двумя сетевыми интерфейсами. Eth0 оставьте обычным интерфейсом, а на eth1 подайте поток SPAN от ваших коммутаторов. Условимся называть эту машину wazuh.
@@ -98,44 +100,62 @@
     apt-get update
     apt-get install oracle-java8-installer
 
-Теперь logstash-forwarder (aka Lamberjack).
-
-    wget -qO - https://packages.elasticsearch.org/GPG-KEY-elasticsearch | apt-key add -
-    echo "deb https://packages.elasticsearch.org/logstashforwarder/debian stable main" | tee -a /etc/apt/sources.list
-    apt-get update
-    apt-get install logstash-forwarder
-    usermod -a -G ossec logstash-forwarder
-
-Теперь нам нужно скопировать файл с сертификатом машины elastic на машину wazuh в каталог `/opt/logstash-forwarder/`. Этот файл сгенерировался скриптом установки и лежит здесь: `/etc/logstash/logstash-forwarder.crt`. После этого необходимо на машине wazuh отредактировать файл `/etc/logstash-forwarder.conf`. Он должен стать вот таким:
-
-    {
-      "network": {
-        "servers": [ "elastic_server_ip:5043" ],
-        "ssl ca": "/opt/logstash-forwarder/logstash-forwarder.crt",
-        "timeout": 15
-      },
-      "files": [
-        {
-            "paths": [
-              "/var/ossec/logs/alerts/alerts.json"
-             ],
-            "fields": { "type": "ossec-alerts" }
-        },
-        {
-            "paths": [
-              "/var/log/suricata/eve-ids.json"
-             ],
-            "fields": { "type": "suricata-alerts" }
-        }
+Теперь filebeat
     
-      ]
-    }
+    curl https://packages.elasticsearch.org/GPG-KEY-elasticsearch | apt-key add -
+    echo "deb https://packages.elastic.co/beats/apt stable main" | tee -a /etc/apt/sources.list.d/beats.list
+    apt-get update && apt-get install filebeat
+    /bin/systemctl daemon-reload
+    /bin/systemctl enable filebeat.service
+    service filebeat start
+
+
+
+
+
+Теперь нам нужно скопировать файл с сертификатом машины elastic на машину wazuh в каталог `/etc/filebeat/`. Этот файл сгенерировался скриптом установки и лежит здесь: `/etc/logstash/logstash-forwarder.crt`. После этого необходимо на машине wazuh отредактировать файл `/etc/filebeat/filebeat.yml`. Он должен стать вот таким:
+
+        filebeat:
+          # List of prospectors to fetch data.
+          prospectors:
+            # Each - is a prospector. Below are the prospector specific configurations
+            -
+              paths:
+                - /var/ossec/logs/alerts/alerts.json
+               
+              encoding: cp1251
+              input_type: log
+              document_type: ossec-alerts
+            -
+              paths:
+                - /var/log/suricata/eve-ids.json
+              encoding: plain
+              input_type: log
+              document_type: suricata-alerts
+
+          
+          registry_file: /var/lib/filebeat/registry
+
+          
+        output:
+          logstash:
+            # The Logstash hosts
+            hosts: ["192.168.1.1:5043"]
+
+            tls:
+              certificate_authorities: ["/etc/filebeat/logstash-forwarder.crt"]
+
+        logging:
+
+          files:
+            rotateeverybytes: 10485760 # = 10MB
+
 
 Опять же не забудем указать реальный IP машины elastic. Можем запускать forwarder.
 
     /bin/systemctl daemon-reload
-    /bin/systemctl enable logstash-forwarder.service
-    /bin/systemctl start logstash-forwarder.service 
+    /bin/systemctl enable filebeat.service
+    service filebeat start
 
 Всё. События пошли на elastic.
 Теперь поработаем с kibana.
@@ -186,4 +206,8 @@
 - 07.11.2016
 
 Немного "замутил" логи ORACLE, чтобы их удобнее было читать.
+
+- 07.01.2017
+
+За это время многое переделалось. Сейчас я выложил обновленные файлы конфигурации. И на машине wazuh я давно не использую logstash-forwarder, поэтому переписал инструкцию под filebeat.
 

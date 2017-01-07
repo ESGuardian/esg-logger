@@ -79,4 +79,5 @@ ESGCISCOFW113019 Group = %{DATA:group}, Username = %{DATA:user}, IP = %{IP:src_i
 
 # ASA-4-750003, ASA-4-750012  
 ESGCISCOFW7500_03_12 Local:%{IP:src_ip}:%{INT:src_port} Remote:%{IP:dst_ip}:%{INT:dst_port} Username:%{DATA:user} IKEv2 %{GREEDYDATA:reason}
- 
+# ASA-4-113005 
+ESGCISCOFW113005 AAA user authentication %{DATA:action} : reason = %{DATA:reason} : server = %{DATA:auth_server} : user = %{DATA:user} : user IP = %{IP:src_ip}

@@ -1,56 +1,5 @@
 [
   {
-    "_id": "PCI-Compliance",
-    "_type": "dashboard",
-    "_source": {
-      "title": "PCI Compliance",
-      "hits": 0,
-      "description": "",
-      "panelsJSON": "[{\"col\":7,\"id\":\"PCIDSS:-By-section\",\"row\":4,\"size_x\":3,\"size_y\":4,\"type\":\"visualization\"},{\"col\":1,\"id\":\"Requirements-by-agent\",\"row\":19,\"size_x\":12,\"size_y\":2,\"type\":\"visualization\"},{\"col\":1,\"id\":\"PCI-DSS:-Requirement-11.4\",\"row\":4,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"col\":1,\"id\":\"High-Risk-Alerts-slash-PCI-DSS\",\"row\":8,\"size_x\":12,\"size_y\":2,\"type\":\"visualization\"},{\"col\":1,\"id\":\"PCI-DSS:-Signature-Area-Chart\",\"row\":10,\"size_x\":12,\"size_y\":3,\"type\":\"visualization\"},{\"col\":1,\"id\":\"PCI-Requirements-by-time\",\"row\":1,\"size_x\":6,\"size_y\":3,\"type\":\"visualization\"},{\"col\":7,\"id\":\"Requirements-slash-Groups\",\"row\":1,\"size_x\":6,\"size_y\":3,\"type\":\"visualization\"},{\"col\":10,\"id\":\"PCI-Requirements-slash-Agent\",\"row\":4,\"size_x\":3,\"size_y\":4,\"type\":\"visualization\"},{\"col\":1,\"id\":\"Integrity-checksum-changed\",\"row\":13,\"size_x\":5,\"size_y\":3,\"type\":\"visualization\"},{\"col\":6,\"id\":\"File-table-integrity-checksum-changed\",\"row\":13,\"size_x\":7,\"size_y\":3,\"type\":\"visualization\"},{\"col\":4,\"id\":\"PCI-DSS:-Requirement-10.2.2\",\"row\":4,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"col\":1,\"id\":\"PCI-DSS:-Requirement-10.2.5\",\"row\":6,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"col\":4,\"id\":\"PCI-DSS:-Requirement-10.6.1\",\"row\":6,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"id\":\"Last-Alerts\",\"type\":\"search\",\"size_x\":12,\"size_y\":3,\"col\":1,\"row\":16,\"columns\":[\"AgentName\",\"rule.AlertLevel\",\"rule.PCI_DSS\",\"rule.description\"],\"sort\":[\"rule.groups\",\"desc\"]}]",
-      "optionsJSON": "{\"darkTheme\":false}",
-      "uiStateJSON": "{}",
-      "version": 1,
-      "timeRestore": false,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}]}"
-      }
-    }
-  },
-  {
-    "_id": "CISCO-common",
-    "_type": "dashboard",
-    "_source": {
-      "title": "CISCO-common",
-      "hits": 0,
-      "description": "",
-      "panelsJSON": "[{\"col\":1,\"id\":\"CISCO-events\",\"panelIndex\":1,\"row\":1,\"size_x\":3,\"size_y\":4,\"type\":\"visualization\"},{\"col\":4,\"columns\":[\"src_ip\",\"assigned_ip\",\"user\",\"group\",\"geoip.country_code2\",\"geoip.city_name\"],\"id\":\"CISCO-remote-access-users\",\"panelIndex\":3,\"row\":1,\"size_x\":9,\"size_y\":4,\"sort\":[\"@timestamp\",\"desc\"],\"type\":\"search\"},{\"id\":\"CISCO-common\",\"type\":\"search\",\"panelIndex\":4,\"size_x\":12,\"size_y\":4,\"col\":1,\"row\":5,\"columns\":[\"event-code\",\"log_msg\",\"action\",\"src_ip\",\"dst_ip\",\"user\",\"geoip.country_code2\",\"geoip.city_name\"],\"sort\":[\"@timestamp\",\"desc\"]}]",
-      "optionsJSON": "{\"darkTheme\":false}",
-      "uiStateJSON": "{}",
-      "version": 1,
-      "timeRestore": false,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}]}"
-      }
-    }
-  },
-  {
-    "_id": "Zlock_dash",
-    "_type": "dashboard",
-    "_source": {
-      "title": "Zlock_dash",
-      "hits": 0,
-      "description": "",
-      "panelsJSON": "[{\"col\":1,\"id\":\"Zlock_top_computers\",\"panelIndex\":1,\"row\":1,\"size_x\":4,\"size_y\":2,\"type\":\"visualization\"},{\"col\":5,\"id\":\"Zlock_top_devices\",\"panelIndex\":2,\"row\":1,\"size_x\":4,\"size_y\":2,\"type\":\"visualization\"},{\"col\":9,\"id\":\"Zlock_top_users\",\"panelIndex\":3,\"row\":1,\"size_x\":4,\"size_y\":2,\"type\":\"visualization\"},{\"col\":1,\"id\":\"Zlock_all_computers\",\"panelIndex\":4,\"row\":3,\"size_x\":4,\"size_y\":4,\"type\":\"visualization\"},{\"col\":5,\"id\":\"Zlock_all_devices\",\"panelIndex\":5,\"row\":3,\"size_x\":4,\"size_y\":4,\"type\":\"visualization\"},{\"col\":9,\"id\":\"Zlock_all_users\",\"panelIndex\":6,\"row\":3,\"size_x\":4,\"size_y\":4,\"type\":\"visualization\"},{\"col\":1,\"columns\":[\"zntf_computer\",\"zntf_user\",\"device\",\"path\",\"file_copy\"],\"id\":\"Zlock_brief\",\"panelIndex\":7,\"row\":7,\"size_x\":12,\"size_y\":6,\"sort\":[\"zntf_datetime\",\"desc\"],\"type\":\"search\"}]",
-      "optionsJSON": "{\"darkTheme\":false}",
-      "uiStateJSON": "{\"P-5\":{\"spy\":{\"mode\":{\"name\":null,\"fill\":false}}}}",
-      "version": 1,
-      "timeRestore": false,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}]}"
-      }
-    }
-  },
-  {
     "_id": "Suricata-dash",
     "_type": "dashboard",
     "_source": {
@@ -68,13 +17,13 @@
     }
   },
   {
-    "_id": "OSSEC-Alerts",
+    "_id": "PCI-Compliance",
     "_type": "dashboard",
     "_source": {
-      "title": "OSSEC Alerts",
+      "title": "PCI Compliance",
       "hits": 0,
       "description": "",
-      "panelsJSON": "[{\"col\":1,\"columns\":[\"AgentName\",\"AgentIP\",\"rule.sidid\",\"rule.AlertLevel\",\"rule.description\",\"full_log\"],\"id\":\"Last-alerts\",\"panelIndex\":4,\"row\":6,\"size_x\":12,\"size_y\":5,\"sort\":[\"@timestamp\",\"desc\"],\"type\":\"search\"},{\"col\":5,\"id\":\"Total-Alerts-Time-Bar\",\"panelIndex\":5,\"row\":1,\"size_x\":4,\"size_y\":5,\"type\":\"visualization\"},{\"col\":1,\"id\":\"Signature-counts\",\"panelIndex\":13,\"row\":1,\"size_x\":4,\"size_y\":5,\"type\":\"visualization\"},{\"id\":\"OSSEC-agent-total-events\",\"type\":\"visualization\",\"panelIndex\":14,\"size_x\":4,\"size_y\":5,\"col\":9,\"row\":1}]",
+      "panelsJSON": "[{\"col\":7,\"id\":\"PCIDSS:-By-section\",\"row\":4,\"size_x\":3,\"size_y\":4,\"type\":\"visualization\"},{\"col\":1,\"id\":\"Requirements-by-agent\",\"row\":19,\"size_x\":12,\"size_y\":2,\"type\":\"visualization\"},{\"col\":1,\"id\":\"PCI-DSS:-Requirement-11.4\",\"row\":4,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"col\":1,\"id\":\"High-Risk-Alerts-slash-PCI-DSS\",\"row\":8,\"size_x\":12,\"size_y\":2,\"type\":\"visualization\"},{\"col\":1,\"id\":\"PCI-DSS:-Signature-Area-Chart\",\"row\":10,\"size_x\":12,\"size_y\":3,\"type\":\"visualization\"},{\"col\":1,\"id\":\"PCI-Requirements-by-time\",\"row\":1,\"size_x\":6,\"size_y\":3,\"type\":\"visualization\"},{\"col\":7,\"id\":\"Requirements-slash-Groups\",\"row\":1,\"size_x\":6,\"size_y\":3,\"type\":\"visualization\"},{\"col\":10,\"id\":\"PCI-Requirements-slash-Agent\",\"row\":4,\"size_x\":3,\"size_y\":4,\"type\":\"visualization\"},{\"col\":1,\"id\":\"Integrity-checksum-changed\",\"row\":13,\"size_x\":5,\"size_y\":3,\"type\":\"visualization\"},{\"col\":6,\"id\":\"File-table-integrity-checksum-changed\",\"row\":13,\"size_x\":7,\"size_y\":3,\"type\":\"visualization\"},{\"col\":4,\"id\":\"PCI-DSS:-Requirement-10.2.2\",\"row\":4,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"col\":1,\"id\":\"PCI-DSS:-Requirement-10.2.5\",\"row\":6,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"col\":4,\"id\":\"PCI-DSS:-Requirement-10.6.1\",\"row\":6,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"id\":\"Last-Alerts\",\"type\":\"search\",\"size_x\":12,\"size_y\":3,\"col\":1,\"row\":16,\"columns\":[\"AgentName\",\"rule.AlertLevel\",\"rule.PCI_DSS\",\"rule.description\"],\"sort\":[\"rule.groups\",\"desc\"]}]",
       "optionsJSON": "{\"darkTheme\":false}",
       "uiStateJSON": "{}",
       "version": 1,
@@ -102,6 +51,152 @@
     }
   },
   {
+    "_id": "OSSEC-Alerts",
+    "_type": "dashboard",
+    "_source": {
+      "title": "OSSEC Alerts",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"col\":1,\"columns\":[\"AgentName\",\"AgentIP\",\"rule.sidid\",\"rule.AlertLevel\",\"rule.description\",\"full_log\"],\"id\":\"Last-alerts\",\"panelIndex\":4,\"row\":6,\"size_x\":12,\"size_y\":5,\"sort\":[\"@timestamp\",\"desc\"],\"type\":\"search\"},{\"col\":5,\"id\":\"Total-Alerts-Time-Bar\",\"panelIndex\":5,\"row\":1,\"size_x\":4,\"size_y\":5,\"type\":\"visualization\"},{\"col\":1,\"id\":\"Signature-counts\",\"panelIndex\":13,\"row\":1,\"size_x\":4,\"size_y\":5,\"type\":\"visualization\"},{\"id\":\"OSSEC-agent-total-events\",\"type\":\"visualization\",\"panelIndex\":14,\"size_x\":4,\"size_y\":5,\"col\":9,\"row\":1}]",
+      "optionsJSON": "{\"darkTheme\":false}",
+      "uiStateJSON": "{}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}]}"
+      }
+    }
+  },
+  {
+    "_id": "CISCO-common",
+    "_type": "dashboard",
+    "_source": {
+      "title": "CISCO-common",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"col\":1,\"id\":\"CISCO-events\",\"panelIndex\":1,\"row\":1,\"size_x\":3,\"size_y\":4,\"type\":\"visualization\"},{\"col\":1,\"columns\":[\"event-code\",\"log_msg\",\"action\",\"src_ip\",\"dst_ip\",\"user\",\"geoip.country_code2\",\"geoip.city_name\"],\"id\":\"CISCO-common\",\"panelIndex\":4,\"row\":5,\"size_x\":12,\"size_y\":4,\"sort\":[\"@timestamp\",\"desc\"],\"type\":\"search\"},{\"col\":4,\"id\":\"Cisco-events-ty-time\",\"panelIndex\":5,\"row\":1,\"size_x\":5,\"size_y\":4,\"type\":\"visualization\"},{\"id\":\"CISCO-remote-access-users\",\"type\":\"search\",\"panelIndex\":6,\"size_x\":4,\"size_y\":4,\"col\":9,\"row\":1,\"columns\":[\"src_ip\",\"user\",\"geoip.city_name\",\"geoip.country_code2\",\"assigned_ip\",\"group\"],\"sort\":[\"@timestamp\",\"desc\"]}]",
+      "optionsJSON": "{\"darkTheme\":false}",
+      "uiStateJSON": "{\"P-1\":{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}},\"P-5\":{\"vis\":{\"legendOpen\":false}}}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}]}"
+      }
+    }
+  },
+  {
+    "_id": "Zlock_dash",
+    "_type": "dashboard",
+    "_source": {
+      "title": "Zlock_dash",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"col\":1,\"id\":\"Zlock_top_computers\",\"panelIndex\":1,\"row\":1,\"size_x\":4,\"size_y\":2,\"type\":\"visualization\"},{\"col\":9,\"id\":\"Zlock_top_users\",\"panelIndex\":3,\"row\":1,\"size_x\":4,\"size_y\":2,\"type\":\"visualization\"},{\"col\":1,\"id\":\"Zlock_all_computers\",\"panelIndex\":4,\"row\":3,\"size_x\":4,\"size_y\":5,\"type\":\"visualization\"},{\"col\":5,\"id\":\"Zlock_all_devices\",\"panelIndex\":5,\"row\":3,\"size_x\":4,\"size_y\":5,\"type\":\"visualization\"},{\"col\":9,\"id\":\"Zlock_all_users\",\"panelIndex\":6,\"row\":3,\"size_x\":4,\"size_y\":5,\"type\":\"visualization\"},{\"col\":1,\"columns\":[\"zntf_computer\",\"zntf_user\",\"device\",\"path\",\"file_copy\"],\"id\":\"Zlock_brief\",\"panelIndex\":7,\"row\":8,\"size_x\":12,\"size_y\":6,\"sort\":[\"zntf_datetime\",\"desc\"],\"type\":\"search\"},{\"col\":5,\"id\":\"Zlock-events-by-time\",\"panelIndex\":8,\"row\":1,\"size_x\":4,\"size_y\":2,\"type\":\"visualization\"}]",
+      "optionsJSON": "{\"darkTheme\":false}",
+      "uiStateJSON": "{\"P-5\":{\"spy\":{\"mode\":{\"fill\":false,\"name\":null}}}}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}]}"
+      }
+    }
+  },
+  {
+    "_id": "HELP_dash",
+    "_type": "dashboard",
+    "_source": {
+      "title": "HELP_dash",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"col\":1,\"id\":\"HELP_Fortigate_Snipets\",\"panelIndex\":1,\"row\":1,\"size_x\":12,\"size_y\":6,\"type\":\"visualization\"}]",
+      "optionsJSON": "{\"darkTheme\":false}",
+      "uiStateJSON": "{}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}]}"
+      }
+    }
+  },
+  {
+    "_id": "ABS-common",
+    "_type": "dashboard",
+    "_source": {
+      "title": "ABS-common",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"col\":1,\"id\":\"ABS-events-by-time\",\"panelIndex\":1,\"row\":1,\"size_x\":3,\"size_y\":5,\"type\":\"visualization\"},{\"col\":4,\"id\":\"ABS-osuser-userhost-orauser-full\",\"panelIndex\":3,\"row\":1,\"size_x\":6,\"size_y\":5,\"type\":\"visualization\"},{\"col\":10,\"id\":\"ABS-events-by-action-name\",\"panelIndex\":4,\"row\":1,\"size_x\":3,\"size_y\":5,\"type\":\"visualization\"},{\"id\":\"ABS-briefl-search\",\"type\":\"search\",\"panelIndex\":5,\"size_x\":12,\"size_y\":7,\"col\":1,\"row\":6,\"columns\":[\"os_username\",\"userhost\",\"username\",\"action_name\",\"obj_name\",\"comment_text\",\"sql_text\"],\"sort\":[\"@timestamp\",\"desc\"]}]",
+      "optionsJSON": "{\"darkTheme\":false}",
+      "uiStateJSON": "{\"P-1\":{\"vis\":{\"legendOpen\":false}},\"P-4\":{\"spy\":{\"mode\":{\"fill\":false,\"name\":null}}}}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}]}"
+      }
+    }
+  },
+  {
+    "_id": "Main-dash",
+    "_type": "dashboard",
+    "_source": {
+      "title": "Main-dash",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"col\":1,\"id\":\"FG-events-by-time\",\"panelIndex\":1,\"row\":1,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"col\":4,\"id\":\"Zlock-events-by-time\",\"panelIndex\":2,\"row\":1,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"col\":7,\"id\":\"Total-Alerts-Time-Bar\",\"panelIndex\":3,\"row\":1,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"col\":10,\"id\":\"Cisco-events-ty-time\",\"panelIndex\":4,\"row\":3,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"col\":1,\"id\":\"SG-alerts-by-time\",\"panelIndex\":5,\"row\":3,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"col\":4,\"id\":\"REFER\",\"panelIndex\":6,\"row\":3,\"size_x\":6,\"size_y\":4,\"type\":\"visualization\"},{\"col\":10,\"id\":\"ABS-events-by-time\",\"panelIndex\":7,\"row\":1,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"}]",
+      "optionsJSON": "{\"darkTheme\":false}",
+      "uiStateJSON": "{\"P-1\":{\"vis\":{\"legendOpen\":false}},\"P-3\":{\"vis\":{\"colors\":{\"Count\":\"#3F6833\"},\"legendOpen\":false}},\"P-4\":{\"vis\":{\"legendOpen\":false}},\"P-5\":{\"vis\":{\"colors\":{\"Count\":\"#3F6833\"},\"legendOpen\":false}},\"P-7\":{\"vis\":{\"legendOpen\":false}}}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}]}"
+      }
+    }
+  },
+  {
+    "_id": "Zlock_brief",
+    "_type": "search",
+    "_source": {
+      "title": "Zlock_brief",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "zntf_computer",
+        "zntf_user",
+        "device",
+        "path",
+        "file_copy"
+      ],
+      "sort": [
+        "zntf_datetime",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"zlock-*\",\"query\":{\"query_string\":{\"query\":\"_exists_:file_copy\",\"analyze_wildcard\":true}},\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647}}"
+      }
+    }
+  },
+  {
+    "_id": "Zlock_common",
+    "_type": "search",
+    "_source": {
+      "title": "Zlock_common",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_source"
+      ],
+      "sort": [
+        "zntf_datetime",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"zlock-*\",\"query\":{\"query_string\":{\"query\":\"_exists_:file_copy\",\"analyze_wildcard\":true}},\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647}}"
+      }
+    }
+  },
+  {
     "_id": "Last-alerts",
     "_type": "search",
     "_source": {
@@ -123,6 +218,38 @@
       "version": 1,
       "kibanaSavedObjectMeta": {
         "searchSourceJSON": "{\"index\":\"ossec-*\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}},\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "FG-full-search",
+    "_type": "search",
+    "_source": {
+      "title": "FG-full-search",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "src_ip",
+        "user",
+        "hostname",
+        "dst_ip",
+        "action",
+        "log_type",
+        "subtype",
+        "group",
+        "catdesc",
+        "utmaction",
+        "app",
+        "appcat",
+        "url"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"fortigate-*\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}},\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647}}"
       }
     }
   },
@@ -197,31 +324,6 @@
     }
   },
   {
-    "_id": "CISCO-remote-access-users",
-    "_type": "search",
-    "_source": {
-      "title": "CISCO-remote-access-users",
-      "description": "",
-      "hits": 0,
-      "columns": [
-        "src_ip",
-        "assigned_ip",
-        "user",
-        "group",
-        "geoip.country_code2",
-        "geoip.city_name"
-      ],
-      "sort": [
-        "@timestamp",
-        "desc"
-      ],
-      "version": 1,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"cisco-asa-*\",\"query\":{\"query_string\":{\"query\":\"event-code:\\\"Remconn address assigned\\\"\",\"analyze_wildcard\":true}},\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647}}"
-      }
-    }
-  },
-  {
     "_id": "CISCO-common",
     "_type": "search",
     "_source": {
@@ -249,70 +351,19 @@
     }
   },
   {
-    "_id": "Zlock_brief",
+    "_id": "CISCO-remote-access-users",
     "_type": "search",
     "_source": {
-      "title": "Zlock_brief",
-      "description": "",
-      "hits": 0,
-      "columns": [
-        "zntf_computer",
-        "zntf_user",
-        "device",
-        "path",
-        "file_copy"
-      ],
-      "sort": [
-        "zntf_datetime",
-        "desc"
-      ],
-      "version": 1,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"zlock-*\",\"query\":{\"query_string\":{\"query\":\"_exists_:file_copy\",\"analyze_wildcard\":true}},\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647}}"
-      }
-    }
-  },
-  {
-    "_id": "Zlock_common",
-    "_type": "search",
-    "_source": {
-      "title": "Zlock_common",
-      "description": "",
-      "hits": 0,
-      "columns": [
-        "_source"
-      ],
-      "sort": [
-        "zntf_datetime",
-        "desc"
-      ],
-      "version": 1,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"zlock-*\",\"query\":{\"query_string\":{\"query\":\"_exists_:file_copy\",\"analyze_wildcard\":true}},\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647}}"
-      }
-    }
-  },
-  {
-    "_id": "FG-full-search",
-    "_type": "search",
-    "_source": {
-      "title": "FG-full-search",
+      "title": "CISCO-remote-access-users",
       "description": "",
       "hits": 0,
       "columns": [
         "src_ip",
         "user",
-        "hostname",
-        "dst_ip",
-        "action",
-        "log_type",
-        "subtype",
-        "group",
-        "catdesc",
-        "utmaction",
-        "app",
-        "appcat",
-        "url"
+        "geoip.city_name",
+        "geoip.country_code2",
+        "assigned_ip",
+        "group"
       ],
       "sort": [
         "@timestamp",
@@ -320,21 +371,113 @@
       ],
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"fortigate-*\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}},\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647}}"
+        "searchSourceJSON": "{\"index\":\"cisco-asa-*\",\"query\":{\"query_string\":{\"query\":\"event-code:\\\"Remconn address assigned\\\"\",\"analyze_wildcard\":true}},\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647}}"
       }
     }
   },
   {
-    "_id": "File-table-integrity-checksum-changed",
-    "_type": "visualization",
+    "_id": "ABS-full-search",
+    "_type": "search",
     "_source": {
-      "title": "File table integrity checksum changed",
-      "visState": "{\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"SyscheckFile.path\",\"exclude\":{\"pattern\":\"etc\"},\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"SyscheckFile.md5_before\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"4\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"SyscheckFile.md5_after\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"5\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"rule.PCI_DSS\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{},\"title\":\"File table integrity checksum changed\"}",
-      "uiStateJSON": "{}",
+      "title": "ABS-full-search",
       "description": "",
+      "hits": 0,
+      "columns": [
+        "_source"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"ossec-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+        "searchSourceJSON": "{\"index\":\"abs-*\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}},\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647}}"
+      }
+    }
+  },
+  {
+    "_id": "ABS-briefl-search",
+    "_type": "search",
+    "_source": {
+      "title": "ABS-briefl-search",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "os_username",
+        "userhost",
+        "username",
+        "action_name",
+        "obj_name",
+        "comment_text",
+        "sql_text"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"abs-*\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}},\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647}}"
+      }
+    }
+  },
+  {
+    "_id": "Zlock_all_computers",
+    "_type": "visualization",
+    "_source": {
+      "title": "Zlock_all_computers",
+      "visState": "{\"title\":\"Zlock_all_computers\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"zntf_computer\",\"size\":500,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"All Computers\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "Zlock_common",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Zlock_all_devices",
+    "_type": "visualization",
+    "_source": {
+      "title": "Zlock_all_devices",
+      "visState": "{\"title\":\"Zlock_all_devices\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"device\",\"size\":500,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"All Devices\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "Zlock_common",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Zlock_all_users",
+    "_type": "visualization",
+    "_source": {
+      "title": "Zlock_all_users",
+      "visState": "{\"title\":\"Zlock_all_users\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"zntf_user\",\"size\":200,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"All Userc\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "Zlock_common",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Zlock_top_devices",
+    "_type": "visualization",
+    "_source": {
+      "title": "Zlock_top_devices",
+      "visState": "{\"title\":\"Zlock_top_devices\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":true},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"device\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"TOP 10 Devices\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "Zlock_common",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
       }
     }
   },
@@ -353,25 +496,11 @@
     }
   },
   {
-    "_id": "PCI-DSS:-Requirement-10.6",
+    "_id": "File-table-integrity-checksum-changed",
     "_type": "visualization",
     "_source": {
-      "title": "PCI DSS: Requirement 10.6",
-      "visState": "{\"type\":\"line\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":false,\"defaultYExtents\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"type\":\"filters\",\"schema\":\"split\",\"params\":{\"filters\":[{\"input\":{\"query\":{\"query_string\":{\"query\":\"rule.PCI_DSS: \\\"10.6\\\"\",\"analyze_wildcard\":true}}}}],\"row\":true}}],\"listeners\":{},\"title\":\"PCI DSS: Requirement 10.6\"}",
-      "uiStateJSON": "{}",
-      "description": "",
-      "version": 1,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"ossec-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
-      }
-    }
-  },
-  {
-    "_id": "PCI-Requirements-by-time",
-    "_type": "visualization",
-    "_source": {
-      "title": "PCI Requirements by time",
-      "visState": "{\"type\":\"line\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"defaultYExtents\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"rule.PCI_DSS\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{},\"title\":\"PCI Requirements by time\"}",
+      "title": "File table integrity checksum changed",
+      "visState": "{\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"SyscheckFile.path\",\"exclude\":{\"pattern\":\"etc\"},\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"SyscheckFile.md5_before\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"4\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"SyscheckFile.md5_after\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"5\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"rule.PCI_DSS\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{},\"title\":\"File table integrity checksum changed\"}",
       "uiStateJSON": "{}",
       "description": "",
       "version": 1,
@@ -400,20 +529,6 @@
     "_source": {
       "title": "Signature counts",
       "visState": "{\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"rule.description\",\"size\":100,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{},\"title\":\"Signature counts\"}",
-      "uiStateJSON": "{}",
-      "description": "",
-      "version": 1,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"ossec-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
-      }
-    }
-  },
-  {
-    "_id": "Alerts:-Geolocation",
-    "_type": "visualization",
-    "_source": {
-      "title": "Alerts: Geolocation",
-      "visState": "{\"type\":\"tile_map\",\"params\":{\"mapType\":\"Shaded Circle Markers\",\"isDesaturated\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"geohash_grid\",\"schema\":\"segment\",\"params\":{\"field\":\"GeoLocation.location\",\"precision\":3}}],\"listeners\":{},\"title\":\"Alerts: Geolocation\"}",
       "uiStateJSON": "{}",
       "description": "",
       "version": 1,
@@ -465,81 +580,11 @@
     }
   },
   {
-    "_id": "PCI-Requirements-slash-Agent",
-    "_type": "visualization",
-    "_source": {
-      "title": "PCI Requirements / Agent",
-      "visState": "{\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"mode\":\"grouped\",\"defaultYExtents\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"rule.PCI_DSS\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"AgentName\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{},\"title\":\"PCI Requirements / Agent\"}",
-      "uiStateJSON": "{}",
-      "description": "",
-      "version": 1,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"ossec-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
-      }
-    }
-  },
-  {
-    "_id": "Integrity-checksum-changed",
-    "_type": "visualization",
-    "_source": {
-      "title": "Integrity checksum changed",
-      "visState": "{\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"SyscheckFile.path\",\"exclude\":{\"pattern\":\"etc\"},\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{},\"title\":\"Integrity checksum changed\"}",
-      "uiStateJSON": "{}",
-      "description": "",
-      "version": 1,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"ossec-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
-      }
-    }
-  },
-  {
-    "_id": "Groups-and-Benchmarks",
-    "_type": "visualization",
-    "_source": {
-      "title": "Groups and Benchmarks",
-      "visState": "{\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":true},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"rule.CIS\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"rule.groups\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{},\"title\":\"Groups and Benchmarks\"}",
-      "uiStateJSON": "{}",
-      "description": "",
-      "version": 1,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"ossec-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
-      }
-    }
-  },
-  {
     "_id": "Pie-Chart:-Signature",
     "_type": "visualization",
     "_source": {
       "title": "Pie Chart: Signature",
       "visState": "{\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"rule.description\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{},\"title\":\"Pie Chart: Signature\"}",
-      "uiStateJSON": "{}",
-      "description": "",
-      "version": 1,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"ossec-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
-      }
-    }
-  },
-  {
-    "_id": "Agents-and-Benchmarks",
-    "_type": "visualization",
-    "_source": {
-      "title": "Agents and Benchmarks",
-      "visState": "{\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"mode\":\"stacked\",\"defaultYExtents\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"AgentName\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"rule.CIS\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{},\"title\":\"Agents and Benchmarks\"}",
-      "uiStateJSON": "{}",
-      "description": "",
-      "version": 1,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"ossec-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
-      }
-    }
-  },
-  {
-    "_id": "Signature:-Area-Chart",
-    "_type": "visualization",
-    "_source": {
-      "title": "Signature: Area Chart",
-      "visState": "{\"type\":\"area\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"mode\":\"stacked\",\"defaultYExtents\":false,\"smoothLines\":false,\"scale\":\"linear\",\"interpolate\":\"linear\",\"times\":[],\"addTimeMarker\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"rule.description\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"h\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}],\"listeners\":{},\"title\":\"Signature: Area Chart\"}",
       "uiStateJSON": "{}",
       "description": "",
       "version": 1,
@@ -563,6 +608,90 @@
     }
   },
   {
+    "_id": "PCI-Requirements-by-time",
+    "_type": "visualization",
+    "_source": {
+      "title": "PCI Requirements by time",
+      "visState": "{\"type\":\"line\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"defaultYExtents\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"rule.PCI_DSS\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{},\"title\":\"PCI Requirements by time\"}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"ossec-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Alerts:-Geolocation",
+    "_type": "visualization",
+    "_source": {
+      "title": "Alerts: Geolocation",
+      "visState": "{\"type\":\"tile_map\",\"params\":{\"mapType\":\"Shaded Circle Markers\",\"isDesaturated\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"geohash_grid\",\"schema\":\"segment\",\"params\":{\"field\":\"GeoLocation.location\",\"precision\":3}}],\"listeners\":{},\"title\":\"Alerts: Geolocation\"}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"ossec-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Integrity-checksum-changed",
+    "_type": "visualization",
+    "_source": {
+      "title": "Integrity checksum changed",
+      "visState": "{\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"SyscheckFile.path\",\"exclude\":{\"pattern\":\"etc\"},\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{},\"title\":\"Integrity checksum changed\"}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"ossec-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "PCI-Requirements-slash-Agent",
+    "_type": "visualization",
+    "_source": {
+      "title": "PCI Requirements / Agent",
+      "visState": "{\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"mode\":\"grouped\",\"defaultYExtents\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"rule.PCI_DSS\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"AgentName\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{},\"title\":\"PCI Requirements / Agent\"}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"ossec-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Groups-and-Benchmarks",
+    "_type": "visualization",
+    "_source": {
+      "title": "Groups and Benchmarks",
+      "visState": "{\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":true},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"rule.CIS\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"rule.groups\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{},\"title\":\"Groups and Benchmarks\"}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"ossec-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Signature:-Area-Chart",
+    "_type": "visualization",
+    "_source": {
+      "title": "Signature: Area Chart",
+      "visState": "{\"type\":\"area\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"mode\":\"stacked\",\"defaultYExtents\":false,\"smoothLines\":false,\"scale\":\"linear\",\"interpolate\":\"linear\",\"times\":[],\"addTimeMarker\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"rule.description\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"h\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}],\"listeners\":{},\"title\":\"Signature: Area Chart\"}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"ossec-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
     "_id": "Requirements-slash-Groups",
     "_type": "visualization",
     "_source": {
@@ -577,25 +706,11 @@
     }
   },
   {
-    "_id": "Requirements-by-agent",
+    "_id": "PCI-DSS:-Requirement-10.6",
     "_type": "visualization",
     "_source": {
-      "title": "Requirements by agent",
-      "visState": "{\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"4\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"AgentName\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"5\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"rule.PCI_DSS\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"6\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"rule.description\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{},\"title\":\"Requirements by agent\"}",
-      "uiStateJSON": "{}",
-      "description": "",
-      "version": 1,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"ossec-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
-      }
-    }
-  },
-  {
-    "_id": "PCI-DSS:-Requirement-10.2.2",
-    "_type": "visualization",
-    "_source": {
-      "title": "PCI DSS: Requirement 10.2.2",
-      "visState": "{\"type\":\"line\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":false,\"defaultYExtents\":false,\"showCircles\":true,\"smoothLines\":false,\"interpolate\":\"linear\",\"scale\":\"linear\",\"drawLinesBetweenPoints\":true,\"radiusRatio\":9,\"times\":[],\"addTimeMarker\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"type\":\"filters\",\"schema\":\"split\",\"params\":{\"filters\":[{\"input\":{\"query\":{\"query_string\":{\"query\":\"rule.PCI_DSS: \\\"10.2.2\\\"\",\"analyze_wildcard\":true}}}}],\"row\":true}}],\"listeners\":{},\"title\":\"PCI DSS: Requirement 10.2.2\"}",
+      "title": "PCI DSS: Requirement 10.6",
+      "visState": "{\"type\":\"line\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":false,\"defaultYExtents\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"type\":\"filters\",\"schema\":\"split\",\"params\":{\"filters\":[{\"input\":{\"query\":{\"query_string\":{\"query\":\"rule.PCI_DSS: \\\"10.6\\\"\",\"analyze_wildcard\":true}}}}],\"row\":true}}],\"listeners\":{},\"title\":\"PCI DSS: Requirement 10.6\"}",
       "uiStateJSON": "{}",
       "description": "",
       "version": 1,
@@ -619,34 +734,6 @@
     }
   },
   {
-    "_id": "PCI-DSS:-Signature-Area-Chart",
-    "_type": "visualization",
-    "_source": {
-      "title": "PCI DSS: Signature Area Chart",
-      "visState": "{\"type\":\"area\",\"params\":{\"addLegend\":true,\"addTooltip\":true,\"defaultYExtents\":false,\"mode\":\"stacked\",\"shareYAxis\":true,\"smoothLines\":false,\"scale\":\"linear\",\"interpolate\":\"linear\",\"times\":[],\"addTimeMarker\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"4\",\"type\":\"filters\",\"schema\":\"split\",\"params\":{\"filters\":[{\"input\":{\"query\":{\"query_string\":{\"query\":\"_exists_:rule.PCI_DSS\",\"analyze_wildcard\":true}}}}],\"row\":true}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"rule.description\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}],\"listeners\":{},\"title\":\"PCI DSS: Signature Area Chart\"}",
-      "uiStateJSON": "{}",
-      "description": "",
-      "version": 1,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"ossec-*\",\"query\":{\"query_string\":{\"query\":\"_exists_:rule.PCI_DSS\",\"analyze_wildcard\":true}},\"filter\":[]}"
-      }
-    }
-  },
-  {
-    "_id": "PCI-DSS:-Requirement-6.4",
-    "_type": "visualization",
-    "_source": {
-      "title": "PCI DSS: Requirement 6.4",
-      "visState": "{\"type\":\"line\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":false,\"defaultYExtents\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"type\":\"filters\",\"schema\":\"split\",\"params\":{\"filters\":[{\"input\":{\"query\":{\"query_string\":{\"query\":\"rule.PCI_DSS: \\\"6.4\\\"\",\"analyze_wildcard\":true}}}}],\"row\":true}}],\"listeners\":{},\"title\":\"PCI DSS: Requirement 6.4\"}",
-      "uiStateJSON": "{}",
-      "description": "",
-      "version": 1,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"ossec-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
-      }
-    }
-  },
-  {
     "_id": "Location-Bar-Alerts",
     "_type": "visualization",
     "_source": {
@@ -661,11 +748,11 @@
     }
   },
   {
-    "_id": "Alerts:-Top-5-Groups",
+    "_id": "PCI-DSS:-Requirement-10.5",
     "_type": "visualization",
     "_source": {
-      "title": "Alerts: Top 5 Groups",
-      "visState": "{\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"rule.groups\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{},\"title\":\"Alerts: Top 5 Groups\"}",
+      "title": "PCI DSS: Requirement 10.5",
+      "visState": "{\"type\":\"line\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":false,\"defaultYExtents\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"type\":\"filters\",\"schema\":\"split\",\"params\":{\"filters\":[{\"input\":{\"query\":{\"query_string\":{\"query\":\"rule.PCI_DSS: \\\"10.5\\\"\",\"analyze_wildcard\":true}}}}],\"row\":true}}],\"listeners\":{},\"title\":\"PCI DSS: Requirement 10.5\"}",
       "uiStateJSON": "{}",
       "description": "",
       "version": 1,
@@ -675,11 +762,11 @@
     }
   },
   {
-    "_id": "PCI-DSS:-Requirement-10.5",
+    "_id": "Alerts:-Top-5-Groups",
     "_type": "visualization",
     "_source": {
-      "title": "PCI DSS: Requirement 10.5",
-      "visState": "{\"type\":\"line\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":false,\"defaultYExtents\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"type\":\"filters\",\"schema\":\"split\",\"params\":{\"filters\":[{\"input\":{\"query\":{\"query_string\":{\"query\":\"rule.PCI_DSS: \\\"10.5\\\"\",\"analyze_wildcard\":true}}}}],\"row\":true}}],\"listeners\":{},\"title\":\"PCI DSS: Requirement 10.5\"}",
+      "title": "Alerts: Top 5 Groups",
+      "visState": "{\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"rule.groups\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{},\"title\":\"Alerts: Top 5 Groups\"}",
       "uiStateJSON": "{}",
       "description": "",
       "version": 1,
@@ -731,133 +818,70 @@
     }
   },
   {
+    "_id": "Agents-and-Benchmarks",
+    "_type": "visualization",
+    "_source": {
+      "title": "Agents and Benchmarks",
+      "visState": "{\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"mode\":\"stacked\",\"defaultYExtents\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"AgentName\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"rule.CIS\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{},\"title\":\"Agents and Benchmarks\"}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"ossec-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "PCI-DSS:-Signature-Area-Chart",
+    "_type": "visualization",
+    "_source": {
+      "title": "PCI DSS: Signature Area Chart",
+      "visState": "{\"type\":\"area\",\"params\":{\"addLegend\":true,\"addTooltip\":true,\"defaultYExtents\":false,\"mode\":\"stacked\",\"shareYAxis\":true,\"smoothLines\":false,\"scale\":\"linear\",\"interpolate\":\"linear\",\"times\":[],\"addTimeMarker\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"4\",\"type\":\"filters\",\"schema\":\"split\",\"params\":{\"filters\":[{\"input\":{\"query\":{\"query_string\":{\"query\":\"_exists_:rule.PCI_DSS\",\"analyze_wildcard\":true}}}}],\"row\":true}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"rule.description\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}],\"listeners\":{},\"title\":\"PCI DSS: Signature Area Chart\"}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"ossec-*\",\"query\":{\"query_string\":{\"query\":\"_exists_:rule.PCI_DSS\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "PCI-DSS:-Requirement-6.4",
+    "_type": "visualization",
+    "_source": {
+      "title": "PCI DSS: Requirement 6.4",
+      "visState": "{\"type\":\"line\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":false,\"defaultYExtents\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"type\":\"filters\",\"schema\":\"split\",\"params\":{\"filters\":[{\"input\":{\"query\":{\"query_string\":{\"query\":\"rule.PCI_DSS: \\\"6.4\\\"\",\"analyze_wildcard\":true}}}}],\"row\":true}}],\"listeners\":{},\"title\":\"PCI DSS: Requirement 6.4\"}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"ossec-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "PCI-DSS:-Requirement-10.2.2",
+    "_type": "visualization",
+    "_source": {
+      "title": "PCI DSS: Requirement 10.2.2",
+      "visState": "{\"type\":\"line\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":false,\"defaultYExtents\":false,\"showCircles\":true,\"smoothLines\":false,\"interpolate\":\"linear\",\"scale\":\"linear\",\"drawLinesBetweenPoints\":true,\"radiusRatio\":9,\"times\":[],\"addTimeMarker\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"type\":\"filters\",\"schema\":\"split\",\"params\":{\"filters\":[{\"input\":{\"query\":{\"query_string\":{\"query\":\"rule.PCI_DSS: \\\"10.2.2\\\"\",\"analyze_wildcard\":true}}}}],\"row\":true}}],\"listeners\":{},\"title\":\"PCI DSS: Requirement 10.2.2\"}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"ossec-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
     "_id": "SG-signature",
     "_type": "visualization",
     "_source": {
       "title": "SG-signature",
-      "visState": "{\"title\":\"New Visualization\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"alert.signature\",\"size\":300,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "visState": "{\"title\":\"SG-signature\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"alert.signature\",\"size\":300,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
       "uiStateJSON": "{}",
       "description": "",
       "savedSearchId": "Suricata-log",
-      "version": 1,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"filter\":[]}"
-      }
-    }
-  },
-  {
-    "_id": "CISCO-events",
-    "_type": "visualization",
-    "_source": {
-      "title": "CISCO-events",
-      "visState": "{\"title\":\"New Visualization\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"event-code\",\"size\":100,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
-      "uiStateJSON": "{}",
-      "description": "",
-      "savedSearchId": "CISCO-common",
-      "version": 1,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"filter\":[]}"
-      }
-    }
-  },
-  {
-    "_id": "SG-alerts-by-time",
-    "_type": "visualization",
-    "_source": {
-      "title": "SG-alerts-by-time",
-      "visState": "{\"aggs\":[{\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\"},\"schema\":\"segment\",\"type\":\"date_histogram\",\"id\":\"3\"},{\"id\":\"2\",\"schema\":\"metric\",\"type\":\"count\"}],\"type\":\"histogram\"}",
-      "uiStateJSON": "{\"vis\":{\"colors\":{\"Count\":\"#447EBC\"}}}",
-      "description": "",
-      "version": 1,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"suricata-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
-      }
-    }
-  },
-  {
-    "_id": "Zlock_all_computers",
-    "_type": "visualization",
-    "_source": {
-      "title": "Zlock_all_computers",
-      "visState": "{\"title\":\"New Visualization\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"zntf_computer\",\"size\":500,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"All Computers\"}}],\"listeners\":{}}",
-      "uiStateJSON": "{}",
-      "description": "",
-      "savedSearchId": "Zlock_common",
-      "version": 1,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"filter\":[]}"
-      }
-    }
-  },
-  {
-    "_id": "Zlock_all_devices",
-    "_type": "visualization",
-    "_source": {
-      "title": "Zlock_all_devices",
-      "visState": "{\"title\":\"New Visualization\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"device\",\"size\":500,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"All Devices\"}}],\"listeners\":{}}",
-      "uiStateJSON": "{}",
-      "description": "",
-      "savedSearchId": "Zlock_common",
-      "version": 1,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"filter\":[]}"
-      }
-    }
-  },
-  {
-    "_id": "Zlock_all_users",
-    "_type": "visualization",
-    "_source": {
-      "title": "Zlock_all_users",
-      "visState": "{\"title\":\"New Visualization\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"zntf_user\",\"size\":200,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"All Userc\"}}],\"listeners\":{}}",
-      "uiStateJSON": "{}",
-      "description": "",
-      "savedSearchId": "Zlock_common",
-      "version": 1,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"filter\":[]}"
-      }
-    }
-  },
-  {
-    "_id": "Zlock_top_computers",
-    "_type": "visualization",
-    "_source": {
-      "title": "Zlock_top_computers",
-      "visState": "{\"title\":\"Zlock_top_computers\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":true},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"zntf_computer\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"TOP 10 Computers\"}}],\"listeners\":{}}",
-      "uiStateJSON": "{}",
-      "description": "",
-      "savedSearchId": "Zlock_common",
-      "version": 1,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"filter\":[]}"
-      }
-    }
-  },
-  {
-    "_id": "Zlock_top_devices",
-    "_type": "visualization",
-    "_source": {
-      "title": "Zlock_top_devices",
-      "visState": "{\"title\":\"Zlock_top_devices\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":true},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"device\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"TOP 10 Devices\"}}],\"listeners\":{}}",
-      "uiStateJSON": "{}",
-      "description": "",
-      "savedSearchId": "Zlock_common",
-      "version": 1,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"filter\":[]}"
-      }
-    }
-  },
-  {
-    "_id": "Zlock_top_users",
-    "_type": "visualization",
-    "_source": {
-      "title": "Zlock_top_users",
-      "visState": "{\"title\":\"Zlock_top_users\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":true},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"zntf_user\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"TOP 10 users\"}}],\"listeners\":{}}",
-      "uiStateJSON": "{}",
-      "description": "",
-      "savedSearchId": "Zlock_common",
       "version": 1,
       "kibanaSavedObjectMeta": {
         "searchSourceJSON": "{\"filter\":[]}"
@@ -869,7 +893,7 @@
     "_type": "visualization",
     "_source": {
       "title": "OSSEC-agent-total-events",
-      "visState": "{\"title\":\"New Visualization\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"AgentName\",\"size\":300,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "visState": "{\"title\":\"OSSEC-agent-total-events\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"AgentName\",\"size\":300,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
       "uiStateJSON": "{}",
       "description": "",
       "savedSearchId": "Last-alerts",
@@ -884,7 +908,7 @@
     "_type": "visualization",
     "_source": {
       "title": "SG-alerts-by-category",
-      "visState": "{\"aggs\":[{\"id\":\"1\",\"params\":{},\"schema\":\"metric\",\"type\":\"count\"},{\"id\":\"2\",\"params\":{\"field\":\"alert.category\",\"order\":\"desc\",\"orderBy\":\"1\",\"size\":100},\"schema\":\"bucket\",\"type\":\"terms\"}],\"listeners\":{},\"params\":{\"perPage\":10,\"showMeticsAtAllLevels\":false,\"showPartialRows\":false},\"title\":\"Suricata-alerts-by-category\",\"type\":\"table\"}",
+      "visState": "{\"aggs\":[{\"id\":\"1\",\"params\":{},\"schema\":\"metric\",\"type\":\"count\"},{\"id\":\"2\",\"params\":{\"field\":\"alert.category\",\"order\":\"desc\",\"orderBy\":\"1\",\"size\":100},\"schema\":\"bucket\",\"type\":\"terms\"}],\"listeners\":{},\"params\":{\"perPage\":10,\"showMeticsAtAllLevels\":false,\"showPartialRows\":false},\"title\":\"SG-alerts-by-category\",\"type\":\"table\"}",
       "uiStateJSON": "{}",
       "description": "",
       "savedSearchId": "Suricata-log",
@@ -899,23 +923,8 @@
     "_type": "visualization",
     "_source": {
       "title": "FG-events-by-time",
-      "visState": "{\"title\":\"New Visualization\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}],\"listeners\":{}}",
+      "visState": "{\"title\":\"FG-events-by-time\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}],\"listeners\":{}}",
       "uiStateJSON": "{\"vis\":{\"colors\":{\"Count\":\"#3F6833\"}}}",
-      "description": "",
-      "savedSearchId": "FG-full-search",
-      "version": 1,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"filter\":[]}"
-      }
-    }
-  },
-  {
-    "_id": "FG-users-by-bytes-recieved",
-    "_type": "visualization",
-    "_source": {
-      "title": "FG-users-by-bytes-recieved",
-      "visState": "{\"title\":\"New Visualization\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"bytes_recieved\"}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"user\",\"size\":200,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
-      "uiStateJSON": "{}",
       "description": "",
       "savedSearchId": "FG-full-search",
       "version": 1,
@@ -929,7 +938,7 @@
     "_type": "visualization",
     "_source": {
       "title": "FG-users-by-bytes-sent",
-      "visState": "{\"title\":\"New Visualization\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"bytes_sent\"}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"user\",\"size\":200,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "visState": "{\"title\":\"FG-users-by-bytes-sent\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"bytes_sent\"}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"user\",\"size\":200,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
       "uiStateJSON": "{}",
       "description": "",
       "savedSearchId": "FG-full-search",
@@ -944,7 +953,7 @@
     "_type": "visualization",
     "_source": {
       "title": "FG-ext-hosts",
-      "visState": "{\"title\":\"New Visualization\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"hostname\",\"size\":10000,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "visState": "{\"title\":\"FG-ext-hosts\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"hostname\",\"size\":10000,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
       "uiStateJSON": "{}",
       "description": "",
       "savedSearchId": "FG-full-search",
@@ -959,7 +968,7 @@
     "_type": "visualization",
     "_source": {
       "title": "FG-webcat",
-      "visState": "{\"title\":\"New Visualization\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"catdesc\",\"size\":300,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "visState": "{\"title\":\"FG-webcat\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"catdesc\",\"size\":300,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
       "uiStateJSON": "{}",
       "description": "",
       "savedSearchId": "FG-full-search",
@@ -970,11 +979,11 @@
     }
   },
   {
-    "_id": "FG-subtype",
+    "_id": "FG-users-by-bytes-recieved",
     "_type": "visualization",
     "_source": {
-      "title": "FG-subtype",
-      "visState": "{\"title\":\"New Visualization\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"subtype\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "title": "FG-users-by-bytes-recieved",
+      "visState": "{\"title\":\"FG-users-by-bytes-recieved\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"bytes_recieved\"}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"user\",\"size\":200,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
       "uiStateJSON": "{}",
       "description": "",
       "savedSearchId": "FG-full-search",
@@ -989,7 +998,7 @@
     "_type": "visualization",
     "_source": {
       "title": "FG-virus",
-      "visState": "{\"title\":\"New Visualization\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"virus\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "visState": "{\"title\":\"FG-virus\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"virus\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
       "uiStateJSON": "{}",
       "description": "",
       "savedSearchId": "FG-full-search",
@@ -1019,13 +1028,27 @@
     "_type": "visualization",
     "_source": {
       "title": "FG-apps",
-      "visState": "{\"aggs\":[{\"id\":\"1\",\"params\":{},\"schema\":\"metric\",\"type\":\"count\"},{\"id\":\"2\",\"params\":{\"field\":\"appcat\",\"order\":\"desc\",\"orderBy\":\"1\",\"size\":300},\"schema\":\"bucket\",\"type\":\"terms\"}],\"listeners\":{},\"params\":{\"perPage\":10,\"showMeticsAtAllLevels\":false,\"showPartialRows\":false},\"title\":\"FG-app\",\"type\":\"table\"}",
+      "visState": "{\"aggs\":[{\"id\":\"1\",\"params\":{},\"schema\":\"metric\",\"type\":\"count\"},{\"id\":\"2\",\"params\":{\"field\":\"appcat\",\"order\":\"desc\",\"orderBy\":\"1\",\"size\":300},\"schema\":\"bucket\",\"type\":\"terms\"}],\"listeners\":{},\"params\":{\"perPage\":10,\"showMeticsAtAllLevels\":false,\"showPartialRows\":false},\"title\":\"FG-apps\",\"type\":\"table\"}",
       "uiStateJSON": "{}",
       "description": "",
       "savedSearchId": "FG-full-search",
       "version": 1,
       "kibanaSavedObjectMeta": {
         "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Requirements-by-agent",
+    "_type": "visualization",
+    "_source": {
+      "title": "Requirements by agent",
+      "visState": "{\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"4\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"AgentName\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"5\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"rule.PCI_DSS\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"6\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"rule.description\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{},\"title\":\"Requirements by agent\"}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"ossec-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
       }
     }
   },
@@ -1041,6 +1064,183 @@
       "version": 1,
       "kibanaSavedObjectMeta": {
         "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "CISCO-events",
+    "_type": "visualization",
+    "_source": {
+      "title": "CISCO-events",
+      "visState": "{\"title\":\"CISCO-events\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"event-code\",\"size\":100,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "CISCO-common",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "SG-alerts-by-time",
+    "_type": "visualization",
+    "_source": {
+      "title": "SG-alerts-by-time",
+      "visState": "{\"aggs\":[{\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\"},\"schema\":\"segment\",\"type\":\"date_histogram\",\"id\":\"3\"},{\"id\":\"2\",\"schema\":\"metric\",\"type\":\"count\"}],\"type\":\"histogram\",\"title\":\"SG-alerts-by-time\"}",
+      "uiStateJSON": "{\"vis\":{\"colors\":{\"Count\":\"#447EBC\"}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"suricata-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "FG-subtype",
+    "_type": "visualization",
+    "_source": {
+      "title": "FG-subtype",
+      "visState": "{\"title\":\"FG-subtype\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"subtype\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "FG-full-search",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Zlock-events-by-time",
+    "_type": "visualization",
+    "_source": {
+      "title": "Zlock-events-by-time",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"zntf_datetime\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"legendOpen\":false,\"colors\":{\"Count\":\"#3F6833\"}}}",
+      "description": "",
+      "savedSearchId": "Zlock_common",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Cisco-events-ty-time",
+    "_type": "visualization",
+    "_source": {
+      "title": "Cisco-events-ty-time",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"colors\":{\"Count\":\"#3F6833\"}}}",
+      "description": "",
+      "savedSearchId": "CISCO-common",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Zlock_top_computers",
+    "_type": "visualization",
+    "_source": {
+      "title": "Zlock_top_computers",
+      "visState": "{\"title\":\"Zlock_top_computers\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":true},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"zntf_computer\",\"size\":7,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"TOP 10 Computers\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "Zlock_common",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "HELP_Fortigate_Snipets",
+    "_type": "visualization",
+    "_source": {
+      "title": "HELP_Fortigate_Snipets",
+      "visState": "{\"title\":\"HELP_Fortigate_Snipets\",\"type\":\"markdown\",\"params\":{\"markdown\":\"## Как обновить членство в группах\\n\\n    config vdom\\n    edit root\\n    execute fsso refresh\\n    end\\n\\n## Как перемещаться в консоли между доменами ##\\n\\n    config global     \\t\\t# это глобальный контекст\\n    config vdom \\n    edit root           \\t\\t# это переход в домен root (две команды)\\n    end             \\t\\t# это выход из контекста \\n\\n## Как перемещаться между узлами кластера ##\\n\\n    execute ha manage 0  # это master \\n    execute ha manage 1  # это slave\\n\\n Чтобы не прыгать между узлами, можно использовать их адреса на management интерфейсах:\\n\\n    tlm-fg1: 172.17.4.15\\n    tlm-fg2: 172.17.4.14\\n\\nПодключаться к ним можно и через https и по SSH, пользуя Putty\\n\\n### Как посмотреть логи на консоли ##\\n\\n    config vdom \\n    edit root \\n    execute log filter category 9 \\n    execute log filter start-line 1 \\n    execute log filter view-lines 20 \\n    execute log display\\n\\nв данном случае мы смотрели лог DLP\\n\\n###  Поиск и перезапуск прожорливого процесса ##\\n\\n    config global \\n    diag sys top-summary \\n    diag sys kill 11 <proc_number>\\n\\nПРИ ВЫСОКОЙ УТИЛИЗАЦИИ ПАМЯТИ ОБЫЧНО ПОМОГАЕТ ПЕРЕЗАГРУЗКА `IPSMONITOR`\\n\\n### Если кластер не синхонизируется ##\\n\\n    config global \\n    get system ha status\\n\\nВ выводе команды видим что не синхронизированы узлы скорее всего не совпадают чек-суммы прежде всего делаем:\\n\\n    diagnose sys ha checksum recalculate \\n    get system checksum status\\n\\nесли и после этого не совпадают, тогда у нас какая-то беда. смотрим в каком домене не совпали чек-суммы. Нам предстоит вывести и сравнить чек-суммы по отдельным разделам конфига, чтобы узнать, где разница Выводим подробную информацию с узла мастер:\\n\\n    diagnose sys ha checksum show WiFi\\n\\nWiFi - здесь имя \\\"плохого\\\" домена Вывод длинный. Копируем его в редактор или в текстовый файл.\\n\\nПовторяем эту команду на втором узле кластера. Для этого сначала переходим на него командой:\\n\\n    execute ha manage 1\\n\\n(1 - это slave, 0 - master) Потребуется логиниться к нему повторно. Далее даем команды:\\n\\n    config global \\n    diagnose sys ha checksum show WiFi\\n\\nРезультат вывода опять скопировать в редактор или файл и сравнить с полученным на мастере. Найдя разницу смотреть уже соответствующие секции конфигов и править неправильную.\\n\\n### Балансировка нагрузки в кластере active-active\\n\\n    config global\\n    config system ha\\n    set schedule {hub | ip | ipport | leastconnection | none | random | round‑robin | weight‑round‑robin}\\n    end\\n\\nПараметры балансировки:\\n\\n**None** - No load balancing. Select None when the cluster interfaces are connected to load balancing switches. If you select None, the Primary unit does not load balance traffic and the subordinate units process incoming traffic that does not come from the Primary unit. For all other load balancing schedules, all traffic is received first by the Primary unit, and then forwarded to the subordinate units. The subordinate units only receive and process packets sent from the primary unit.\\n\\n**Hub** -\\tLoad balancing if the cluster interfaces are connected to a hub. Traffic is distributed to cluster units based on the source IP and destination IP of the packet.\\n\\n**Least-Connection** - If the cluster units are connected using switches, select Least Connection to distribute network traffic to the cluster unit currently processing the fewest connections.\\n\\n**Round-Robin** - If the cluster units are connected using switches, select Round-Robin to distribute network traffic to the next available cluster unit.\\n\\n**Weighted Round‑Robin** - Similar to round robin, but weighted values are assigned to each of the units in a cluster based on their capacity and on how many connections they are currently processing. For example, the primary unit should have a lower weighted value because it handles scheduling and forwards traffic. Weighted round robin distributes traffic more evenly because units that are not processing traffic will be more likely to receive new connections than units that are very busy.\\n\\n**Random** - If the cluster units are connected using switches, select Random to randomly distribute traffic to cluster units.\\n\\n**IP** - Load balancing according to IP address. If the cluster units are connected using switches, select IP to distribute traffic to units in a cluster based on the source IP and destination IP of the packet.\\n\\n**IP Port** - Load balancing according to IP address and port. If the cluster units are connected using switches, select IP Port to distribute traffic to units in a cluster based on the source IP, source port, destination IP, and destination port of the packet.\\n\\nСейчас у нас установлено: weight‑round‑robin и задано:\\n\\n    set weight 0 5\\n    set weight 1 10\\n\\nчто в переводе на русский означает: \\\"первые 5 сессий открывать на master, следующие 10 - на первом slave и так по кругу\\\"\\n\\nИнформация о состоянии синхронизации кластера, режиме балансировки и текущем распределении нагрузки выводится так:\\n\\n    config global\\n    get system ha status\\n\\nМы балансирует только сессии UTM (proxy, ips, webfilter ...) трафик не балансируем. Балансировка трафика не обязательно приводит к повышению производительности, может быть и наоборот из-за того, что дополнительные ресурсы будут выделяться на контроль сессий TCP и UDP. Это надо проверять на практике. При желании включить балансировку трафика, это можно сделать так:\\n\\n     config global\\n     config system ha\\n     set load-balance-all enable\\n     end\\n\\n### Всякая полезная информация ##\\n\\nесть в [базе знаний](http://kb.fortinet.com/) Однако, следует помнить, что эти содомиты постоянно меняют синтаксис команд CLI. Поэтому примеры команд для версий 5.2 и более ранних могут не работать. У нас версия 5.4. Если документ для версии 5.4 найти не удается, то надо самому догадываться какой правильный синтаксис в нашей версии. Еще у них в документах очень часто есть ошибки (опечатки) в примерах команд. Тоже нужно соображать, как должно быть правильно. \\n\\nДовольно хорошие инструкции в [online help](http://help.fortinet.com/fos50hlp/54/Content/FortiOS/fortiOS-HTML5-v2/OnlineHelpPage.htm) там легко ориентироваться и нет опечаток :)\\n\\n### Как обратиться в службу поддержки ###\\n\\n    https://support.fortinet.com\\n    reg@in-bank.ru\\n    Registration1!\"},\"aggs\":[],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "ABS-events-by-time",
+    "_type": "visualization",
+    "_source": {
+      "title": "ABS-events-by-time",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"colors\":{\"Count\":\"#3F6833\"}}}",
+      "description": "",
+      "savedSearchId": "ABS-full-search",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Zlock_top_users",
+    "_type": "visualization",
+    "_source": {
+      "title": "Zlock_top_users",
+      "visState": "{\"title\":\"Zlock_top_users\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":true},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"zntf_user\",\"size\":7,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"TOP 10 users\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "Zlock_common",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "ABS-osuser-userhost-orauser-full",
+    "_type": "visualization",
+    "_source": {
+      "title": "ABS-osuser-userhost-orauser-full",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"os_username\",\"size\":500,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"4\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"userhost\",\"size\":100,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"username\",\"size\":500,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "ABS-full-search",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "ABS-events-by-action-name",
+    "_type": "visualization",
+    "_source": {
+      "title": "ABS-events-by-action-name",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"action_name\",\"size\":20,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "ABS-full-search",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "REFER",
+    "_type": "visualization",
+    "_source": {
+      "title": "REFER",
+      "visState": "{\"title\":\"REFER\",\"type\":\"markdown\",\"params\":{\"markdown\":\"### Ссылки на подробные дашборды  ###\\n\\n[FORTIGATE](http://elastic/app/kibana#/dashboard/FG-dash) - Подробные данные по логам FortiGate.\\n\\n[ZLOCK](http://elastic/app/kibana#/dashboard/Zlock_dash) - Подробные данные по логам Zlock (для просмотра данных из теневой копии необходимы права на доступ в соответствующую шару).\\n\\n[OSSEC](http://elastic/app/kibana#/dashboard/OSSEC-Alerts) - Подробные данные по логам HIDS OSSEC.\\n\\n[CISCO-ASA](http://elastic/app/kibana#/dashboard/CISCO-common) - Подробные данные по логам Cisco-ASA.\\n\\n[SURICATA](http://elastic/app/kibana#/dashboard/Suricata-dash) - Подробные данные по логам IDS Suricata.\\n\\n[ABS](http://elastic/app/kibana#/dashboard/ABS-common) - Подробные данные по логам IBSO_PRIME.\\n\\n[HELP](http://elastic/app/kibana#/dashboard/HELP_dash) - снипеты, примеры команд и рекомендации на разные случаи жизни, пока для работы с FortiGate\\n\\n\\n\\nПодробные дашборды интерактивны. Клацая на всякую хрень, можно задать фильтры по этой самой хрени. Привыкнуть работать с Кибаной не сложно, описывать её подробно нет необходимости.\"},\"aggs\":[],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
       }
     }
   }

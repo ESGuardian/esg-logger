@@ -2,10 +2,12 @@
   "order": 0,
   "template": "oracle*",
   "settings": {
-    "index.refresh_interval": "5s"
+    "index.refresh_interval": "5s",
+    "number_of_shards" : 1,
+    "number_of_replicas" : 0
   },
   "mappings": {
-    "oracle": {
+    "abs": {
       "dynamic_templates": [
         {
           "notanalyzed": {
@@ -29,6 +31,10 @@
         "sql_text": {
           "type": "string"
         },
+        "returncode": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
         "@timestamp": {
           "type": "date",
           "format": "dateOptionalTime",
@@ -43,6 +49,9 @@
           "type": "date",
           "format": "dateOptionalTime",
           "index": "not_analyzed"
+        },
+        "transactionid": {
+          "type": "long"
         },
         "@version": {
           "type": "string"
