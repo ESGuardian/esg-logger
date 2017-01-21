@@ -1,0 +1,25 @@
+[
+  {
+    "_id": "WinLog_процессы_и_сервисы",
+    "_type": "search",
+    "_source": {
+      "title": "WinLog_процессы_и_сервисы",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "beat.hostname",
+        "event_data.NewProcessBareName",
+        "event_data.NewProcessName",
+        "message"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"winlogbeat-*\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}},\"filter\":[{\"meta\":{\"negate\":false,\"index\":\"winlogbeat-*\",\"key\":\"query\",\"value\":\"{\\\"constant_score\\\":{\\\"filter\\\":{\\\"bool\\\":{\\\"must\\\":{\\\"term\\\":{\\\"log_name\\\":\\\"Security\\\"}},\\\"should\\\":{\\\"terms\\\":{\\\"event_id\\\":[4688,4697]}}}}}}\",\"disabled\":false,\"alias\":null},\"query\":{\"constant_score\":{\"filter\":{\"bool\":{\"must\":{\"term\":{\"log_name\":\"Security\"}},\"should\":{\"terms\":{\"event_id\":[4688,4697]}}}}}},\"$state\":{\"store\":\"appState\"}}],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647}}"
+      }
+    }
+  }
+]

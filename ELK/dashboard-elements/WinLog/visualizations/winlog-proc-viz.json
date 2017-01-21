@@ -1,0 +1,107 @@
+[
+  {
+    "_id": "WinLog_встречаемость_сервиса_на_хостах",
+    "_type": "visualization",
+    "_source": {
+      "title": "WinLog_встречаемость_сервиса_на_хостах",
+      "visState": "{\"title\":\"WinLog_встречаемость_сервиса_на_хостах\",\"type\":\"table\",\"params\":{\"perPage\":25,\"showMeticsAtAllLevels\":false,\"showPartialRows\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"beat.hostname\",\"customLabel\":\"На хостах\"}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"event_data.NewProcessBareName\",\"size\":10000,\"order\":\"asc\",\"orderBy\":\"1\",\"customLabel\":\"Имя процесса\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "WinLog_процессы_и_сервисы",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "WinLog_процессы_timeline",
+    "_type": "visualization",
+    "_source": {
+      "title": "WinLog_процессы_timeline",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"colors\":{\"Count\":\"#3F6833\"},\"legendOpen\":false}}",
+      "description": "",
+      "savedSearchId": "WinLog_процессы_и_сервисы",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "WinLog_процессы_total",
+    "_type": "visualization",
+    "_source": {
+      "title": "WinLog_процессы_total",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"metric\",\"params\":{\"handleNoResults\":true,\"fontSize\":\"48\"},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Всего событий\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "WinLog_процессы_и_сервисы",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "WinLog_процессы_по_классам",
+    "_type": "visualization",
+    "_source": {
+      "title": "WinLog_процессы_по_классам",
+      "visState": "{\"title\":\"WinLog_процессы_по_классам\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"event_data.NewProcessBareName\",\"customLabel\":\"Кол-во\"}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"event_data.NewProcessSeverity\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Класс процесса\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "WinLog_процессы_и_сервисы",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "WinLog_процессы_полные_пути_по_хостам",
+    "_type": "visualization",
+    "_source": {
+      "title": "WinLog_процессы_полные_пути_по_хостам",
+      "visState": "{\"title\":\"WinLog_процессы_полные_пути_по_хостам\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":true,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"event_data.NewProcessName\",\"customLabel\":\"Клоны\"}},{\"id\":\"4\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"event_data.NewProcessBareName\",\"size\":300,\"order\":\"asc\",\"orderBy\":\"_term\",\"customLabel\":\"Имя\"}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"beat.hostname\",\"size\":300,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Хост\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "WinLog_процессы_и_сервисы",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "WinLog_процессы_события_по_хостам",
+    "_type": "visualization",
+    "_source": {
+      "title": "WinLog_процессы_события_по_хостам",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"table\",\"params\":{\"perPage\":25,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Кол-во\"}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"beat.hostname\",\"size\":300,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Хост\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "WinLog_процессы_и_сервисы",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Winlog_процессы_уникальные_total",
+    "_type": "visualization",
+    "_source": {
+      "title": "Winlog_процессы_уникальные_total",
+      "visState": "{\"title\":\"New Visualization\",\"type\":\"metric\",\"params\":{\"handleNoResults\":true,\"fontSize\":\"48\"},\"aggs\":[{\"id\":\"1\",\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"event_data.NewProcessBareName\",\"customLabel\":\"Различных процессов\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "WinLog_процессы_и_сервисы",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  }
+]

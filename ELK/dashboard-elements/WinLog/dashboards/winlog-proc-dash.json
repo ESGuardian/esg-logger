@@ -1,0 +1,21 @@
+[
+  {
+    "_id": "WinLog-proc-dash",
+    "_type": "dashboard",
+    "_source": {
+      "title": "WinLog-proc-dash",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"col\":1,\"id\":\"WinLog_процессы_события_по_хостам\",\"panelIndex\":1,\"row\":1,\"size_x\":2,\"size_y\":9,\"type\":\"visualization\"},{\"col\":3,\"id\":\"WinLog_процессы_total\",\"panelIndex\":2,\"row\":1,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"col\":3,\"id\":\"WinLog_процессы_timeline\",\"panelIndex\":3,\"row\":3,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"col\":9,\"id\":\"WinLog_встречаемость_сервиса_на_хостах\",\"panelIndex\":4,\"row\":1,\"size_x\":4,\"size_y\":9,\"type\":\"visualization\"},{\"col\":3,\"id\":\"WinLog_процессы_полные_пути_по_хостам\",\"panelIndex\":5,\"row\":5,\"size_x\":6,\"size_y\":5,\"type\":\"visualization\"},{\"col\":6,\"id\":\"Winlog_процессы_уникальные_total\",\"panelIndex\":6,\"row\":1,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"col\":1,\"columns\":[\"beat.hostname\",\"event_data.NewProcessBareName\",\"event_data.NewProcessName\",\"message\"],\"id\":\"WinLog_процессы_и_сервисы\",\"panelIndex\":7,\"row\":10,\"size_x\":12,\"size_y\":7,\"sort\":[\"@timestamp\",\"desc\"],\"type\":\"search\"},{\"col\":6,\"id\":\"WinLog_процессы_по_классам\",\"panelIndex\":8,\"row\":3,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"}]",
+      "optionsJSON": "{\"darkTheme\":false}",
+      "uiStateJSON": "{}",
+      "version": 1,
+      "timeRestore": true,
+      "timeTo": "now/d",
+      "timeFrom": "now/d",
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}]}"
+      }
+    }
+  }
+]
