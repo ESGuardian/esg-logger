@@ -1,5 +1,17 @@
 #! /usr/bin/python
 # -*- coding: utf8 -*-
+#
+# Этот скрипт создает excel 2013 workbook с таблицами различных
+# полезных мне отчетов из Elastic. Здесь приведен в качестве образца и мне на память.
+# У вас могут быть другие индексы и другие полезные отчеты.
+#
+# командная строка: dayly.py [int_days] 
+#    int_days - кол-во суток от сегодня, за которое смотреть события в winlogbeat-*
+#
+# esguardian@outlok.com
+# https://github.com/ESGuardian
+#
+
 import sys
 from datetime import date, timedelta, datetime
 from pytz import timezone
@@ -29,31 +41,33 @@ ora_accounts = True
 ora_access = True
 ips = True
 
-dict = {4727:u"Создана глобальная группа с включенной безопасностью.",\
-4728:u"Член добавлен к глобальной группе с включенной безопасностью.",\
-4729:u"Член удален из глобальной группы с включенной безопасностью.",\
-4730:u"Удалена глобальная группа с включенной безопасностью.",\
-4754:u"Создана универсальная группа с проверкой безопасности.",\
-4756:u"Член добавлен к универсальной группе с проверкой безопасности.",\
-4757:u"Член удален из универсальной группы с включенной безопасностью.",\
-4758:u"Удалена универсальная группа с проверкой безопасности.",\
-4764:u"Изменен тип группы.",\
-4731:u"Создана локальная группа с включенной безопасностью.",\
-4732:u"Член добавлен к локальной группе с включенной безопасностью.",\
-4733:u"Член удален из локальной группы с включенной безопасностью.",\
-4734:u"Удалена локальная группа с включенной безопасностью.",\
-4720:u"Была создана учетная запись пользователя.",\
-4722:u"Учетная запись пользователя была включена.",\
-4723:u"Предпринята попытка изменить пароль учетной записи.",\
-4724:u"Предпринята попытка выполнить сброс пароля учетной записи.",\
-4725:u"Учетная запись пользователя была отключена.",\
-4726:u"Учетная запись пользователя была удалена.",\
-4740:u"Учетная запись пользователя заблокирована.",\
-4767:u"Учетная запись пользователя была разблокирована.",\
-4781:u"Было изменено имя учетной записи.",\
-5377:u"Диспетчер учетных данных учетные данные были восстановлены из резервной копии.",\
-4741:u"Была создана учетная запись компьютера.",\
-4743:u"Учетная запись компьютера была удалена."}
+dict = {
+    4727:u"Создана глобальная группа с включенной безопасностью.",
+    4728:u"Член добавлен к глобальной группе с включенной безопасностью.",
+    4729:u"Член удален из глобальной группы с включенной безопасностью.",
+    4730:u"Удалена глобальная группа с включенной безопасностью.",
+    4754:u"Создана универсальная группа с проверкой безопасности.",
+    4756:u"Член добавлен к универсальной группе с проверкой безопасности.",
+    4757:u"Член удален из универсальной группы с включенной безопасностью.",
+    4758:u"Удалена универсальная группа с проверкой безопасности.",
+    4764:u"Изменен тип группы.",
+    4731:u"Создана локальная группа с включенной безопасностью.",
+    4732:u"Член добавлен к локальной группе с включенной безопасностью.",
+    4733:u"Член удален из локальной группы с включенной безопасностью.",
+    4734:u"Удалена локальная группа с включенной безопасностью.",
+    4720:u"Была создана учетная запись пользователя.",
+    4722:u"Учетная запись пользователя была включена.",
+    4723:u"Предпринята попытка изменить пароль учетной записи.",
+    4724:u"Предпринята попытка выполнить сброс пароля учетной записи.",
+    4725:u"Учетная запись пользователя была отключена.",
+    4726:u"Учетная запись пользователя была удалена.",
+    4740:u"Учетная запись пользователя заблокирована.",
+    4767:u"Учетная запись пользователя была разблокирована.",
+    4781:u"Было изменено имя учетной записи.",
+    5377:u"Диспетчер учетных данных учетные данные были восстановлены из резервной копии.",
+    4741:u"Была создана учетная запись компьютера.",
+    4743:u"Учетная запись компьютера была удалена."
+}
 
 today = datetime.utcnow().date()
 enddate=today.strftime('%Y.%m.%d')
@@ -97,12 +111,12 @@ if remote_access :
     ws.column_dimensions['F'].width = 20
     ws.column_dimensions['G'].width = 20
     
-    myquery =   {"query":\
-                        {\
-                            "constant_score":{ "filter":{"term":{"event-code":"Remconn address assigned"}} }\
-                        },\
-                        "sort":{"@timestamp":{"order":"asc"}},\
-                        "size":"10000"\
+    myquery =   {"query":
+                        {
+                            "constant_score":{ "filter":{"term":{"event-code":"Remconn address assigned"}} }
+                        },
+                        "sort":{"@timestamp":{"order":"asc"}},
+                        "size":"10000"
                     }
 
 
@@ -156,13 +170,13 @@ if remote_access :
         c = ws.cell(row=row_cursor, column=i, value=head)
         c.style = 'Headline 2'
     row_cursor += 1
-    myquery =   {"query":\
-                        {\
-                            "constant_score":{ "filter":{"term":{"event-code":"AAA user authentication Rejected"}} }\
-                        },\
-                        "sort":{"@timestamp":{"order":"asc"}},\
-                        "size":"10000"\
-                    }
+    myquery =   {
+        "query":{
+            "constant_score":{ "filter":{"term":{"event-code":"AAA user authentication Rejected"}} }
+        },
+        "sort":{"@timestamp":{"order":"asc"}},
+        "size":"10000"
+    }
 
     
     try:
@@ -236,13 +250,20 @@ if group :
     ws.column_dimensions['E'].width = 30
     ws.column_dimensions['F'].width = 45
     ws.column_dimensions['G'].width = 20
-    myquery =   {"query":\
-                    {\
-                        "constant_score":{ "filter":{"bool":{"must":{"term":{"log_name":"Security"}},"should":{"terms":{ "event_id":[4727,4728,4729,4730,4754,4756,4757,4758,4764,4731,4732,4733,4734] }}}} }\
-                    },\
-                    "sort":{"@timestamp":{"order":"asc"}},\
-                    "size":"10000"\
-                }
+    myquery = {
+        "query":{
+            "constant_score":{ 
+                "filter":{
+                    "bool":{
+                        "must":{"term":{"log_name":"Security"}},
+                        "should":{"terms":{ "event_id":[4727,4728,4729,4730,4754,4756,4757,4758,4764,4731,4732,4733,4734] }}
+                    }
+                } 
+            }
+        },
+        "sort":{"@timestamp":{"order":"asc"}},
+        "size":"10000"
+    }
     
     try:
         res = es.search(index=getindexes(es,"winlogbeat-",dates),body=myquery)
@@ -328,13 +349,20 @@ if accounts :
     ws.column_dimensions['E'].width = 30
     ws.column_dimensions['F'].width = 20
 
-    myquery =   {"query":\
-                    {\
-                        "constant_score":{ "filter":{"bool":{"must":{"term":{"log_name":"Security"}},"should":{"terms":{ "event_id":[4720,4722,4723,4724,4725,4726,4740,4767,4781,5377,4741,4743] }}}} }\
-                    },\
-                    "sort":{"@timestamp":{"order":"asc"}},\
-                    "size":"10000"\
-                }
+    myquery = {
+        "query":{
+            "constant_score":{ 
+                "filter":{
+                    "bool":{
+                        "must":{"term":{"log_name":"Security"}},
+                        "should":{"terms":{ "event_id":[4720,4722,4723,4724,4725,4726,4740,4767,4781,5377,4741,4743] }}
+                    }
+                } 
+            }
+        },
+        "sort":{"@timestamp":{"order":"asc"}},
+        "size":"10000"
+    }
     
           
     try:
@@ -411,15 +439,13 @@ if ora_accounts :
     ws.column_dimensions['E'].width = 40
     ws.column_dimensions['F'].width = 20
     ws.column_dimensions['G'].width = 20
-    myquery =   {"query":\
-                    {\
-                        "constant_score":{\
-                            "filter":{"terms":{"action":["51","114","115","7","49","43"]}}\
-                        }\
-                    },\
-                    "sort":{"@timestamp":{"order":"asc"}},\
-                    "size":"10000"\
-                }
+    myquery = {
+        "query":{
+            "constant_score":{ "filter":{"terms":{"action":["51","114","115","7","49","43"]}} }
+        },
+        "sort":{"@timestamp":{"order":"asc"}},
+        "size":"10000"
+    }
     try:
         res = es.search(index=getindexes(es,"oracle-",dates),body=myquery)
         for hit in res['hits']['hits']:
@@ -500,12 +526,21 @@ if ora_access :
     ws.column_dimensions['C'].width = 20
     ws.column_dimensions['D'].width = 35
 
-    myquery =   {"query":{ "constant_score":{ "filter":{"term":{"action_name":"LOGON"}} } },\
-        "sort":[{"@timestamp":{"order":"asc"}}],\
-        "size":"10000",\
-        "aggs": {\
-            "by_osuser": {"terms": {"field": "os_username", "size":200}, "aggs": {"by_userhost": {"terms": {"field": "userhost"}, "aggs":{"by_username": {"terms": {"field": "username"}}}}}}\
-        }\
+    myquery = {
+        "query":{ "constant_score":{ "filter":{"term":{"action_name":"LOGON"}} } },
+        "sort":[{"@timestamp":{"order":"asc"}}],
+        "size":"10000",
+        "aggs": {
+            "by_osuser": {"terms": {"field": "os_username", "size":200}, 
+                "aggs": {
+                    "by_userhost": {"terms": {"field": "userhost"}, 
+                        "aggs":{
+                            "by_username": {"terms": {"field": "username"}} 
+                        }
+                    }
+                }
+            }
+        }
     }
     try:
         res = es.search(index=getindexes(es,"oracle-",dates),body=myquery)        
@@ -544,12 +579,21 @@ if ora_access :
         c = ws.cell(row=row_cursor, column=i, value=head)
         c.style = 'Headline 2'
     row_cursor += 1
-    myquery =   {"query":{ "constant_score":{ "filter":{"term":{"action_name":"LOGON FAILURE"}} } },\
-        "sort":[{"@timestamp":{"order":"asc"}}],\
-        "size":"10000",\
-        "aggs": {\
-            "by_osuser": {"terms": {"field": "os_username", "size":200}, "aggs": {"by_userhost": {"terms": {"field": "userhost"}, "aggs":{"by_username": {"terms": {"field": "username"}}}}}}\
-        }\
+    myquery =  {
+        "query":{ "constant_score":{ "filter":{"term":{"action_name":"LOGON FAILURE"}} } },
+        "sort":[{"@timestamp":{"order":"asc"}}],
+        "size":"10000",
+        "aggs": {
+            "by_osuser": {"terms": {"field": "os_username", "size":200}, 
+                "aggs": {
+                    "by_userhost": {"terms": {"field": "userhost"}, 
+                        "aggs":{
+                            "by_username": {"terms": {"field": "username"}} 
+                        }
+                    }
+                }
+            }
+        }
     }
 
     try:
@@ -605,13 +649,20 @@ if app_install :
     ws.column_dimensions['C'].width = 20
     ws.column_dimensions['D'].width = 100
     
-    myquery =   {"query":\
-                    {\
-                        "constant_score":{ "filter":{"bool":{"must":{"term":{"source_name":"MsiInstaller"}},"should":{"terms":{ "event_id":[1036,1037,1033,1034,11707,1022,1019,1007] }}}} }\
-                    },\
-                    "sort":{"@timestamp":{"order":"asc"}},\
-                    "size":"10000"\
-                }
+    myquery = {
+        "query":{
+            "constant_score":{ 
+                "filter":{
+                    "bool":{
+                        "must":{"term":{"source_name":"MsiInstaller"}},
+                        "should":{"terms":{ "event_id":[1036,1037,1033,1034,11707,1022,1019,1007] }}
+                    }
+                } 
+            }
+        },
+        "sort":{"@timestamp":{"order":"asc"}},
+        "size":"10000"\
+    }
 
     
     try:
@@ -681,13 +732,20 @@ if srv_install :
     ws.column_dimensions['E'].width = 40
     ws.column_dimensions['F'].width = 60
     ws.column_dimensions['G'].width = 20
-    myquery =   {"query":\
-                    {\
-                        "constant_score":{ "filter":{"bool":{"must":{"term":{"log_name":"Security"}},"should":{"terms":{ "event_id":[4697] }}}} }\
-                    },\
-                    "sort":{"@timestamp":{"order":"asc"}},\
-                    "size":"10000"\
-                }
+    myquery = {
+        "query":{
+            "constant_score":{ 
+                "filter":{
+                    "bool":{
+                        "must":{"term":{"log_name":"Security"}},
+                        "should":{"terms":{ "event_id":[4697] }}
+                    }
+                } 
+            }
+        },
+        "sort":{"@timestamp":{"order":"asc"}},
+        "size":"10000"
+    }
 
     try:
         res = es.search(index=getindexes(es,"winlogbeat-",dates),body=myquery)
@@ -771,13 +829,20 @@ if antimalware :
     ws.column_dimensions['C'].width = 20
     ws.column_dimensions['D'].width = 80
     ws.column_dimensions['E'].width = 20
-    myquery =   {"query":\
-                    {\
-                        "constant_score":{ "filter":{"bool":{"must":{"term":{"source_name":"Microsoft Antimalware"} }, "must_not":{"terms":{"level":["Сведения","Information"]} } } } }\
-                    },\
-                    "sort":{"@timestamp":{"order":"asc"}},\
-                    "size":"10000"\
-                }
+    myquery = {
+        "query":{
+            "constant_score":{ 
+                "filter":{
+                    "bool":{
+                        "must":{"term":{"source_name":"Microsoft Antimalware"} }, 
+                        "must_not":{"terms":{"level":["Сведения","Information"]} } 
+                    } 
+                } 
+            }
+        },
+        "sort":{"@timestamp":{"order":"asc"}},
+        "size":"10000"
+    }
 
 
     try:
@@ -854,13 +919,13 @@ if ips :
     ws.column_dimensions['D'].width = 20
     ws.column_dimensions['E'].width = 20
     ws.column_dimensions['F'].width = 20
-    myquery =   {"query":\
-                        {\
-                            "constant_score":{ "filter":{"term":{"subtype":"ips"}} }\
-                        },\
-                    "sort":{"@timestamp":{"order":"asc"}},\
-                    "size":"10000"\
-                }
+    myquery = {
+        "query":{
+            "constant_score":{ "filter":{"term":{"subtype":"ips"}} }
+        },
+        "sort":{"@timestamp":{"order":"asc"}},
+        "size":"10000"
+    }
 
     try:
         res = es.search(index=getindexes(es,"fortigate-",dates),body=myquery)
@@ -924,37 +989,37 @@ if ips :
         c = ws.cell(row=row_cursor, column=i, value=head)
         c.style = 'Headline 2'
     row_cursor += 1
-    myquery =   {"query":\
-        {\
-            "constant_score":{\
-                "filter":[\
-                    {"bool":{\
-                        "must":[\
-                            {"bool": {\
-                                "should":[\
-                                    {"term":{"alert.category":"A Network Trojan was Detected"}},\
-                                    {"term":{"alert.category":"Potentially Bad Traffic"}},\
-                                    {"term":{"alert.category":"Potential Corporate Privacy Violation"}},\
-                                    {"term":{"alert.category":"A Suspicious Filename was Detected"}},\
-                                    {"term":{"alert.category":"Misc Attack"}},\
-                                    {"term":{"alert.category":"Attempted Denial of Service"}},\
-                                ],\
-                                "must_not":[\
-                                    {"term":{"alert.signature_id":"2014170"}},\
-                                    {"term":{"alert.signature_id":"2002157"}},\
-                                    {"term":{"alert.signature_id":"2001595"}},\
-                                    {"term":{"src_ip":"172.17.2.14"}},\
-                                    {"term":{"src_ip":"172.16.0.37"}},\
-                                    {"term":{"src_ip":"172.16.0.38"}},\
-                                ]\
-                            }}\
-                        ]\
-                    }},\
-                ]\
-            }\
-        },\
-        "sort":[{"alert.signature":{"order":"asc"}}, {"@timestamp":{"order":"asc"}}],\
-        "size":"10000"\
+    myquery =   {
+        "query":{
+            "constant_score":{
+                "filter":[
+                    {"bool":{
+                        "must":[
+                            {"bool": {
+                                "should":[
+                                    {"term":{"alert.category":"A Network Trojan was Detected"}},
+                                    {"term":{"alert.category":"Potentially Bad Traffic"}},
+                                    {"term":{"alert.category":"Potential Corporate Privacy Violation"}},
+                                    {"term":{"alert.category":"A Suspicious Filename was Detected"}},
+                                    {"term":{"alert.category":"Misc Attack"}},
+                                    {"term":{"alert.category":"Attempted Denial of Service"}},
+                                ],
+                                "must_not":[
+                                    {"term":{"alert.signature_id":"2014170"}},
+                                    {"term":{"alert.signature_id":"2002157"}},
+                                    {"term":{"alert.signature_id":"2001595"}},
+                                    {"term":{"src_ip":"172.17.2.14"}},
+                                    {"term":{"src_ip":"172.16.0.37"}},
+                                    {"term":{"src_ip":"172.16.0.38"}},
+                                ]
+                            }}
+                        ]
+                    }},
+                ]
+            }
+        },
+        "sort":[{"alert.signature":{"order":"asc"}}, {"@timestamp":{"order":"asc"}}],
+        "size":"10000"
     }
 
 
