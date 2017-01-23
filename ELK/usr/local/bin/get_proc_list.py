@@ -17,7 +17,7 @@
 #    0 - выводить только список процессов с severity Неизвестный
 #    1 - выводить весь список процессов (удобно, если хотим переопределить severity)
 #
-# esguardian@outlok.com
+# esguardian@outlook.com
 # https://github.com/ESGuardian
 #
 

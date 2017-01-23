@@ -8,7 +8,7 @@
 # командная строка: dayly.py [int_days] 
 #    int_days - кол-во суток от сегодня, за которое смотреть события в winlogbeat-*
 #
-# esguardian@outlok.com
+# esguardian@outlook.com
 # https://github.com/ESGuardian
 #
 

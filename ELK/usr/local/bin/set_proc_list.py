@@ -13,7 +13,7 @@
 #
 # командная строка: set_proc_list.py 
 #
-# esguardian@outlok.com
+# esguardian@outlook.com
 # https://github.com/ESGuardian
 #
 
