@@ -1,0 +1,103 @@
+#!/sbin/openrc-run
+#
+# /etc/init.d/elasticsearch -- startup script for Elasticsearch
+#
+# Written by ESGuardian <esguardian@outlook.com>.
+#
+
+
+: ${CONF_DIR:=/usr/share/elasticsearch/config}
+: ${DESC:="Elasticsearch Server"}
+: ${ES_USER:=elasticsearch}
+: ${ES_GROUP:=elasticsearch}
+: ${ES_HOME:=/usr/share/elasticsearch}
+: ${MAX_OPEN_FILES:=250000}
+: ${MAX_LOCKED_MEMORY:=unlimited}
+: ${MAX_MAP_COUNT:=262144}
+: ${LOG_DIR:=/var/log/elasticsearch}
+: ${DATA_DIR:=/var/elasticsearch/data}
+: ${PID_DIR:=/var/log/elasticsearch}
+: ${PID_FILE:=${PID_DIR}/elastic.pid}
+: ${DAEMON:=/usr/share/elasticsearch/bin/elasticsearch}
+: ${DAEMON_OPTS:="-d -p ${PID_FILE} -Edefault.path.home=${ES_HOME} -Edefault.path.logs=${LOG_DIR} -Edefault.path.data=${DATA_DIR} -Edefault.path.conf=${CONF_DIR}"}
+
+
+start_pre() {
+    ebegin  "Starting ${DESC}"
+    if service_started; then
+        eend "Already started"
+        return 1
+    fi
+    
+	# Prepare environment
+	mkdir -p "${LOG_DIR}" "${DATA_DIR}" && chown "${ES_USER}":"${ES_GROUP}" "${LOG_DIR}" "${DATA_DIR}"
+
+	# Ensure that the PID_DIR exists (it is cleaned at OS startup time)
+	if [ -n "${PID_DIR}" ] && [ ! -e "${PID_DIR}" ]; then
+		mkdir -p "${PID_DIR}" && chown "${ES_USER}":"${ES_GROUP}" "${PID_DIR}"
+	fi
+	if [ -n "${PID_FILE}" ] && [ ! -e "${PID_FILE}" ]; then
+		touch "${PID_FILE}" && chown "${ES_USER}":"${ES_GROUP}" "${PID_FILE}"
+	fi
+
+	if [ -n "${MAX_OPEN_FILES}" ]; then
+		ulimit -n $MAX_OPEN_FILES
+	fi
+
+	if [ -n "${MAX_LOCKED_MEMORY}" ]; then
+		ulimit -l $MAX_LOCKED_MEMORY
+	fi
+
+	if [ -n "${MAX_MAP_COUNT}" -a -f /proc/sys/vm/max_map_count ]; then
+		sysctl -q -w vm.max_map_count=$MAX_MAP_COUNT
+	fi
+
+}
+start() {
+  	
+    ulimit -a
+
+	# Start Daemon
+	start-stop-daemon -d ${ES_HOME} --start -b --user "${ES_USER}" --pidfile "${PID_FILE}" --exec ${DAEMON} -- ${DAEMON_OPTS}
+	return=$?
+    einfo "starting daemon return_code: $return"
+	if [ $return -eq 0 ]; then
+		i=0
+		timeout=30
+		# Wait for the process to be properly started before exiting
+		until { kill -0 `cat "${PID_FILE}"`; } >/dev/null 2>&1
+		do
+			sleep 1
+			i=$(($i + 1))
+			if [ $i -gt $timeout ]; then
+                eerror "daemon ${DAEMON} not start"
+				exit 1
+			fi
+		done
+	fi
+	einfo "daemon ${DAEMON} started"
+    mark_service_started
+    eend 0
+}
+stop() {
+	ebegin "Stopping ${DESC}"
+
+	if [ -f "${PID_FILE}" ]; then
+		start-stop-daemon --stop --pidfile "${PID_FILE}" \
+			--user ${ES_USER} \
+			--retry 30 > /dev/null
+		if [ $? -eq 1 ]; then
+			ewarn "${DESC} is not running but pid file exists, cleaning up"
+		elif [ $? -eq 3 ]; then
+			PID="`cat ${PID_FILE}`"
+			eerror "Failed to stop ${DESC} (pid $PID)"
+			return 1
+		fi
+		rm -f ${PID_FILE}
+	else
+		einfo "(not running)"
+	fi
+    mark_service_stopped 
+	eend 0
+}
+

@@ -1,0 +1,7 @@
+cluster.name: elastic
+cluster.routing.allocation.node_initial_primaries_recoveries: 10
+node.name: node-1
+node.max_local_storage_nodes: 1
+path.data: /var/elasticsearch/data
+path.logs: /var/log/elasticsearch
+#action.destructive_requires_name: true
