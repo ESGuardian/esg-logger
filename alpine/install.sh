@@ -12,6 +12,18 @@ tar -xvf elasticsearch-5.1.2.tar.gz
 cp -R elasticsearch-5.1.2/ /usr/share/elasticsearch
 rm /usr/share/elasticsearch/bin/*.bat
 rm /usr/share/elasticsearch/bin/*.exe
+curl -L -O https://github.com/ESGuardian/esg-logger/blob/master/alpine/01-elasticsearch.conf
+cp 01-elasticsearch.conf /etc/sysctl.d/01-elasticsearch.conf
+chmod 644 /etc/sysctl.d/01-elasticsearch.conf
+curl -L -O https://github.com/ESGuardian/esg-logger/blob/master/alpine/elasticsearch
+cp elasticsearch /etc/init.d/elasticsearch
+chmod 755 /etc/init.d/elasticsearch
+curl -L -O https://github.com/ESGuardian/esg-logger/blob/master/alpine/elasticsearch.yml
+rm /usr/share/elasticsearch/config/elasticsearch.yml
+cp elasticsearch.yml /usr/share/elasticsearch/config/elasticsearch.yml 
+curl -L -O https://github.com/ESGuardian/esg-logger/blob/master/alpine/jvm.options.elastic
+rm /usr/share/elasticsearch/config/jvm.options
+cp jvm.options.elastic /usr/share/elasticsearch/config/jvm.options 
 addgroup elasticsearch
 adduser -G elasticsearch elasticsearch
 mkdir /var/log/elasticsearch
